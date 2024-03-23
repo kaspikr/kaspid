@@ -20,147 +20,147 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type KaspadMessage struct {
+type KaspidMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Payload:
-	//	*KaspadMessage_Addresses
-	//	*KaspadMessage_Block
-	//	*KaspadMessage_Transaction
-	//	*KaspadMessage_BlockLocator
-	//	*KaspadMessage_RequestAddresses
-	//	*KaspadMessage_RequestRelayBlocks
-	//	*KaspadMessage_RequestTransactions
-	//	*KaspadMessage_IbdBlock
-	//	*KaspadMessage_InvRelayBlock
-	//	*KaspadMessage_InvTransactions
-	//	*KaspadMessage_Ping
-	//	*KaspadMessage_Pong
-	//	*KaspadMessage_Verack
-	//	*KaspadMessage_Version
-	//	*KaspadMessage_TransactionNotFound
-	//	*KaspadMessage_Reject
-	//	*KaspadMessage_PruningPointUtxoSetChunk
-	//	*KaspadMessage_RequestIBDBlocks
-	//	*KaspadMessage_UnexpectedPruningPoint
-	//	*KaspadMessage_IbdBlockLocator
-	//	*KaspadMessage_IbdBlockLocatorHighestHash
-	//	*KaspadMessage_RequestNextPruningPointUtxoSetChunk
-	//	*KaspadMessage_DonePruningPointUtxoSetChunks
-	//	*KaspadMessage_IbdBlockLocatorHighestHashNotFound
-	//	*KaspadMessage_BlockWithTrustedData
-	//	*KaspadMessage_DoneBlocksWithTrustedData
-	//	*KaspadMessage_RequestPruningPointAndItsAnticone
-	//	*KaspadMessage_BlockHeaders
-	//	*KaspadMessage_RequestNextHeaders
-	//	*KaspadMessage_DoneHeaders
-	//	*KaspadMessage_RequestPruningPointUTXOSet
-	//	*KaspadMessage_RequestHeaders
-	//	*KaspadMessage_RequestBlockLocator
-	//	*KaspadMessage_PruningPoints
-	//	*KaspadMessage_RequestPruningPointProof
-	//	*KaspadMessage_PruningPointProof
-	//	*KaspadMessage_Ready
-	//	*KaspadMessage_BlockWithTrustedDataV4
-	//	*KaspadMessage_TrustedData
-	//	*KaspadMessage_RequestIBDChainBlockLocator
-	//	*KaspadMessage_IbdChainBlockLocator
-	//	*KaspadMessage_RequestAnticone
-	//	*KaspadMessage_RequestNextPruningPointAndItsAnticoneBlocks
-	//	*KaspadMessage_GetCurrentNetworkRequest
-	//	*KaspadMessage_GetCurrentNetworkResponse
-	//	*KaspadMessage_SubmitBlockRequest
-	//	*KaspadMessage_SubmitBlockResponse
-	//	*KaspadMessage_GetBlockTemplateRequest
-	//	*KaspadMessage_GetBlockTemplateResponse
-	//	*KaspadMessage_NotifyBlockAddedRequest
-	//	*KaspadMessage_NotifyBlockAddedResponse
-	//	*KaspadMessage_BlockAddedNotification
-	//	*KaspadMessage_GetPeerAddressesRequest
-	//	*KaspadMessage_GetPeerAddressesResponse
-	//	*KaspadMessage_GetSelectedTipHashRequest
-	//	*KaspadMessage_GetSelectedTipHashResponse
-	//	*KaspadMessage_GetMempoolEntryRequest
-	//	*KaspadMessage_GetMempoolEntryResponse
-	//	*KaspadMessage_GetConnectedPeerInfoRequest
-	//	*KaspadMessage_GetConnectedPeerInfoResponse
-	//	*KaspadMessage_AddPeerRequest
-	//	*KaspadMessage_AddPeerResponse
-	//	*KaspadMessage_SubmitTransactionRequest
-	//	*KaspadMessage_SubmitTransactionResponse
-	//	*KaspadMessage_NotifyVirtualSelectedParentChainChangedRequest
-	//	*KaspadMessage_NotifyVirtualSelectedParentChainChangedResponse
-	//	*KaspadMessage_VirtualSelectedParentChainChangedNotification
-	//	*KaspadMessage_GetBlockRequest
-	//	*KaspadMessage_GetBlockResponse
-	//	*KaspadMessage_GetSubnetworkRequest
-	//	*KaspadMessage_GetSubnetworkResponse
-	//	*KaspadMessage_GetVirtualSelectedParentChainFromBlockRequest
-	//	*KaspadMessage_GetVirtualSelectedParentChainFromBlockResponse
-	//	*KaspadMessage_GetBlocksRequest
-	//	*KaspadMessage_GetBlocksResponse
-	//	*KaspadMessage_GetBlockCountRequest
-	//	*KaspadMessage_GetBlockCountResponse
-	//	*KaspadMessage_GetBlockDagInfoRequest
-	//	*KaspadMessage_GetBlockDagInfoResponse
-	//	*KaspadMessage_ResolveFinalityConflictRequest
-	//	*KaspadMessage_ResolveFinalityConflictResponse
-	//	*KaspadMessage_NotifyFinalityConflictsRequest
-	//	*KaspadMessage_NotifyFinalityConflictsResponse
-	//	*KaspadMessage_FinalityConflictNotification
-	//	*KaspadMessage_FinalityConflictResolvedNotification
-	//	*KaspadMessage_GetMempoolEntriesRequest
-	//	*KaspadMessage_GetMempoolEntriesResponse
-	//	*KaspadMessage_ShutDownRequest
-	//	*KaspadMessage_ShutDownResponse
-	//	*KaspadMessage_GetHeadersRequest
-	//	*KaspadMessage_GetHeadersResponse
-	//	*KaspadMessage_NotifyUtxosChangedRequest
-	//	*KaspadMessage_NotifyUtxosChangedResponse
-	//	*KaspadMessage_UtxosChangedNotification
-	//	*KaspadMessage_GetUtxosByAddressesRequest
-	//	*KaspadMessage_GetUtxosByAddressesResponse
-	//	*KaspadMessage_GetVirtualSelectedParentBlueScoreRequest
-	//	*KaspadMessage_GetVirtualSelectedParentBlueScoreResponse
-	//	*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
-	//	*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
-	//	*KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification
-	//	*KaspadMessage_BanRequest
-	//	*KaspadMessage_BanResponse
-	//	*KaspadMessage_UnbanRequest
-	//	*KaspadMessage_UnbanResponse
-	//	*KaspadMessage_GetInfoRequest
-	//	*KaspadMessage_GetInfoResponse
-	//	*KaspadMessage_StopNotifyingUtxosChangedRequest
-	//	*KaspadMessage_StopNotifyingUtxosChangedResponse
-	//	*KaspadMessage_NotifyPruningPointUTXOSetOverrideRequest
-	//	*KaspadMessage_NotifyPruningPointUTXOSetOverrideResponse
-	//	*KaspadMessage_PruningPointUTXOSetOverrideNotification
-	//	*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
-	//	*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
-	//	*KaspadMessage_EstimateNetworkHashesPerSecondRequest
-	//	*KaspadMessage_EstimateNetworkHashesPerSecondResponse
-	//	*KaspadMessage_NotifyVirtualDaaScoreChangedRequest
-	//	*KaspadMessage_NotifyVirtualDaaScoreChangedResponse
-	//	*KaspadMessage_VirtualDaaScoreChangedNotification
-	//	*KaspadMessage_GetBalanceByAddressRequest
-	//	*KaspadMessage_GetBalanceByAddressResponse
-	//	*KaspadMessage_GetBalancesByAddressesRequest
-	//	*KaspadMessage_GetBalancesByAddressesResponse
-	//	*KaspadMessage_NotifyNewBlockTemplateRequest
-	//	*KaspadMessage_NotifyNewBlockTemplateResponse
-	//	*KaspadMessage_NewBlockTemplateNotification
-	//	*KaspadMessage_GetMempoolEntriesByAddressesRequest
-	//	*KaspadMessage_GetMempoolEntriesByAddressesResponse
-	//	*KaspadMessage_GetCoinSupplyRequest
-	//	*KaspadMessage_GetCoinSupplyResponse
-	Payload isKaspadMessage_Payload `protobuf_oneof:"payload"`
+	//	*KaspidMessage_Addresses
+	//	*KaspidMessage_Block
+	//	*KaspidMessage_Transaction
+	//	*KaspidMessage_BlockLocator
+	//	*KaspidMessage_RequestAddresses
+	//	*KaspidMessage_RequestRelayBlocks
+	//	*KaspidMessage_RequestTransactions
+	//	*KaspidMessage_IbdBlock
+	//	*KaspidMessage_InvRelayBlock
+	//	*KaspidMessage_InvTransactions
+	//	*KaspidMessage_Ping
+	//	*KaspidMessage_Pong
+	//	*KaspidMessage_Verack
+	//	*KaspidMessage_Version
+	//	*KaspidMessage_TransactionNotFound
+	//	*KaspidMessage_Reject
+	//	*KaspidMessage_PruningPointUtxoSetChunk
+	//	*KaspidMessage_RequestIBDBlocks
+	//	*KaspidMessage_UnexpectedPruningPoint
+	//	*KaspidMessage_IbdBlockLocator
+	//	*KaspidMessage_IbdBlockLocatorHighestHash
+	//	*KaspidMessage_RequestNextPruningPointUtxoSetChunk
+	//	*KaspidMessage_DonePruningPointUtxoSetChunks
+	//	*KaspidMessage_IbdBlockLocatorHighestHashNotFound
+	//	*KaspidMessage_BlockWithTrustedData
+	//	*KaspidMessage_DoneBlocksWithTrustedData
+	//	*KaspidMessage_RequestPruningPointAndItsAnticone
+	//	*KaspidMessage_BlockHeaders
+	//	*KaspidMessage_RequestNextHeaders
+	//	*KaspidMessage_DoneHeaders
+	//	*KaspidMessage_RequestPruningPointUTXOSet
+	//	*KaspidMessage_RequestHeaders
+	//	*KaspidMessage_RequestBlockLocator
+	//	*KaspidMessage_PruningPoints
+	//	*KaspidMessage_RequestPruningPointProof
+	//	*KaspidMessage_PruningPointProof
+	//	*KaspidMessage_Ready
+	//	*KaspidMessage_BlockWithTrustedDataV4
+	//	*KaspidMessage_TrustedData
+	//	*KaspidMessage_RequestIBDChainBlockLocator
+	//	*KaspidMessage_IbdChainBlockLocator
+	//	*KaspidMessage_RequestAnticone
+	//	*KaspidMessage_RequestNextPruningPointAndItsAnticoneBlocks
+	//	*KaspidMessage_GetCurrentNetworkRequest
+	//	*KaspidMessage_GetCurrentNetworkResponse
+	//	*KaspidMessage_SubmitBlockRequest
+	//	*KaspidMessage_SubmitBlockResponse
+	//	*KaspidMessage_GetBlockTemplateRequest
+	//	*KaspidMessage_GetBlockTemplateResponse
+	//	*KaspidMessage_NotifyBlockAddedRequest
+	//	*KaspidMessage_NotifyBlockAddedResponse
+	//	*KaspidMessage_BlockAddedNotification
+	//	*KaspidMessage_GetPeerAddressesRequest
+	//	*KaspidMessage_GetPeerAddressesResponse
+	//	*KaspidMessage_GetSelectedTipHashRequest
+	//	*KaspidMessage_GetSelectedTipHashResponse
+	//	*KaspidMessage_GetMempoolEntryRequest
+	//	*KaspidMessage_GetMempoolEntryResponse
+	//	*KaspidMessage_GetConnectedPeerInfoRequest
+	//	*KaspidMessage_GetConnectedPeerInfoResponse
+	//	*KaspidMessage_AddPeerRequest
+	//	*KaspidMessage_AddPeerResponse
+	//	*KaspidMessage_SubmitTransactionRequest
+	//	*KaspidMessage_SubmitTransactionResponse
+	//	*KaspidMessage_NotifyVirtualSelectedParentChainChangedRequest
+	//	*KaspidMessage_NotifyVirtualSelectedParentChainChangedResponse
+	//	*KaspidMessage_VirtualSelectedParentChainChangedNotification
+	//	*KaspidMessage_GetBlockRequest
+	//	*KaspidMessage_GetBlockResponse
+	//	*KaspidMessage_GetSubnetworkRequest
+	//	*KaspidMessage_GetSubnetworkResponse
+	//	*KaspidMessage_GetVirtualSelectedParentChainFromBlockRequest
+	//	*KaspidMessage_GetVirtualSelectedParentChainFromBlockResponse
+	//	*KaspidMessage_GetBlocksRequest
+	//	*KaspidMessage_GetBlocksResponse
+	//	*KaspidMessage_GetBlockCountRequest
+	//	*KaspidMessage_GetBlockCountResponse
+	//	*KaspidMessage_GetBlockDagInfoRequest
+	//	*KaspidMessage_GetBlockDagInfoResponse
+	//	*KaspidMessage_ResolveFinalityConflictRequest
+	//	*KaspidMessage_ResolveFinalityConflictResponse
+	//	*KaspidMessage_NotifyFinalityConflictsRequest
+	//	*KaspidMessage_NotifyFinalityConflictsResponse
+	//	*KaspidMessage_FinalityConflictNotification
+	//	*KaspidMessage_FinalityConflictResolvedNotification
+	//	*KaspidMessage_GetMempoolEntriesRequest
+	//	*KaspidMessage_GetMempoolEntriesResponse
+	//	*KaspidMessage_ShutDownRequest
+	//	*KaspidMessage_ShutDownResponse
+	//	*KaspidMessage_GetHeadersRequest
+	//	*KaspidMessage_GetHeadersResponse
+	//	*KaspidMessage_NotifyUtxosChangedRequest
+	//	*KaspidMessage_NotifyUtxosChangedResponse
+	//	*KaspidMessage_UtxosChangedNotification
+	//	*KaspidMessage_GetUtxosByAddressesRequest
+	//	*KaspidMessage_GetUtxosByAddressesResponse
+	//	*KaspidMessage_GetVirtualSelectedParentBlueScoreRequest
+	//	*KaspidMessage_GetVirtualSelectedParentBlueScoreResponse
+	//	*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
+	//	*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
+	//	*KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification
+	//	*KaspidMessage_BanRequest
+	//	*KaspidMessage_BanResponse
+	//	*KaspidMessage_UnbanRequest
+	//	*KaspidMessage_UnbanResponse
+	//	*KaspidMessage_GetInfoRequest
+	//	*KaspidMessage_GetInfoResponse
+	//	*KaspidMessage_StopNotifyingUtxosChangedRequest
+	//	*KaspidMessage_StopNotifyingUtxosChangedResponse
+	//	*KaspidMessage_NotifyPruningPointUTXOSetOverrideRequest
+	//	*KaspidMessage_NotifyPruningPointUTXOSetOverrideResponse
+	//	*KaspidMessage_PruningPointUTXOSetOverrideNotification
+	//	*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
+	//	*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
+	//	*KaspidMessage_EstimateNetworkHashesPerSecondRequest
+	//	*KaspidMessage_EstimateNetworkHashesPerSecondResponse
+	//	*KaspidMessage_NotifyVirtualDaaScoreChangedRequest
+	//	*KaspidMessage_NotifyVirtualDaaScoreChangedResponse
+	//	*KaspidMessage_VirtualDaaScoreChangedNotification
+	//	*KaspidMessage_GetBalanceByAddressRequest
+	//	*KaspidMessage_GetBalanceByAddressResponse
+	//	*KaspidMessage_GetBalancesByAddressesRequest
+	//	*KaspidMessage_GetBalancesByAddressesResponse
+	//	*KaspidMessage_NotifyNewBlockTemplateRequest
+	//	*KaspidMessage_NotifyNewBlockTemplateResponse
+	//	*KaspidMessage_NewBlockTemplateNotification
+	//	*KaspidMessage_GetMempoolEntriesByAddressesRequest
+	//	*KaspidMessage_GetMempoolEntriesByAddressesResponse
+	//	*KaspidMessage_GetCoinSupplyRequest
+	//	*KaspidMessage_GetCoinSupplyResponse
+	Payload isKaspidMessage_Payload `protobuf_oneof:"payload"`
 }
 
-func (x *KaspadMessage) Reset() {
-	*x = KaspadMessage{}
+func (x *KaspidMessage) Reset() {
+	*x = KaspidMessage{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_messages_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -168,13 +168,13 @@ func (x *KaspadMessage) Reset() {
 	}
 }
 
-func (x *KaspadMessage) String() string {
+func (x *KaspidMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*KaspadMessage) ProtoMessage() {}
+func (*KaspidMessage) ProtoMessage() {}
 
-func (x *KaspadMessage) ProtoReflect() protoreflect.Message {
+func (x *KaspidMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_messages_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -186,1711 +186,1711 @@ func (x *KaspadMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use KaspadMessage.ProtoReflect.Descriptor instead.
-func (*KaspadMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use KaspidMessage.ProtoReflect.Descriptor instead.
+func (*KaspidMessage) Descriptor() ([]byte, []int) {
 	return file_messages_proto_rawDescGZIP(), []int{0}
 }
 
-func (m *KaspadMessage) GetPayload() isKaspadMessage_Payload {
+func (m *KaspidMessage) GetPayload() isKaspidMessage_Payload {
 	if m != nil {
 		return m.Payload
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetAddresses() *AddressesMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Addresses); ok {
+func (x *KaspidMessage) GetAddresses() *AddressesMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Addresses); ok {
 		return x.Addresses
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Block); ok {
+func (x *KaspidMessage) GetBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Block); ok {
 		return x.Block
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetTransaction() *TransactionMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Transaction); ok {
+func (x *KaspidMessage) GetTransaction() *TransactionMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Transaction); ok {
 		return x.Transaction
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlockLocator() *BlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BlockLocator); ok {
+func (x *KaspidMessage) GetBlockLocator() *BlockLocatorMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BlockLocator); ok {
 		return x.BlockLocator
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestAddresses() *RequestAddressesMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestAddresses); ok {
+func (x *KaspidMessage) GetRequestAddresses() *RequestAddressesMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestAddresses); ok {
 		return x.RequestAddresses
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestRelayBlocks); ok {
+func (x *KaspidMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestRelayBlocks); ok {
 		return x.RequestRelayBlocks
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestTransactions() *RequestTransactionsMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestTransactions); ok {
+func (x *KaspidMessage) GetRequestTransactions() *RequestTransactionsMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestTransactions); ok {
 		return x.RequestTransactions
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetIbdBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_IbdBlock); ok {
+func (x *KaspidMessage) GetIbdBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_IbdBlock); ok {
 		return x.IbdBlock
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetInvRelayBlock() *InvRelayBlockMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_InvRelayBlock); ok {
+func (x *KaspidMessage) GetInvRelayBlock() *InvRelayBlockMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_InvRelayBlock); ok {
 		return x.InvRelayBlock
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetInvTransactions() *InvTransactionsMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_InvTransactions); ok {
+func (x *KaspidMessage) GetInvTransactions() *InvTransactionsMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_InvTransactions); ok {
 		return x.InvTransactions
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPing() *PingMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Ping); ok {
+func (x *KaspidMessage) GetPing() *PingMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Ping); ok {
 		return x.Ping
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPong() *PongMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Pong); ok {
+func (x *KaspidMessage) GetPong() *PongMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Pong); ok {
 		return x.Pong
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetVerack() *VerackMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Verack); ok {
+func (x *KaspidMessage) GetVerack() *VerackMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Verack); ok {
 		return x.Verack
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetVersion() *VersionMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Version); ok {
+func (x *KaspidMessage) GetVersion() *VersionMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Version); ok {
 		return x.Version
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_TransactionNotFound); ok {
+func (x *KaspidMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_TransactionNotFound); ok {
 		return x.TransactionNotFound
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetReject() *RejectMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Reject); ok {
+func (x *KaspidMessage) GetReject() *RejectMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Reject); ok {
 		return x.Reject
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_PruningPointUtxoSetChunk); ok {
+func (x *KaspidMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_PruningPointUtxoSetChunk); ok {
 		return x.PruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestIBDBlocks); ok {
+func (x *KaspidMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestIBDBlocks); ok {
 		return x.RequestIBDBlocks
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_UnexpectedPruningPoint); ok {
+func (x *KaspidMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_UnexpectedPruningPoint); ok {
 		return x.UnexpectedPruningPoint
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_IbdBlockLocator); ok {
+func (x *KaspidMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_IbdBlockLocator); ok {
 		return x.IbdBlockLocator
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_IbdBlockLocatorHighestHash); ok {
+func (x *KaspidMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_IbdBlockLocatorHighestHash); ok {
 		return x.IbdBlockLocatorHighestHash
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestNextPruningPointUtxoSetChunk); ok {
+func (x *KaspidMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestNextPruningPointUtxoSetChunk); ok {
 		return x.RequestNextPruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_DonePruningPointUtxoSetChunks); ok {
+func (x *KaspidMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_DonePruningPointUtxoSetChunks); ok {
 		return x.DonePruningPointUtxoSetChunks
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_IbdBlockLocatorHighestHashNotFound); ok {
+func (x *KaspidMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_IbdBlockLocatorHighestHashNotFound); ok {
 		return x.IbdBlockLocatorHighestHashNotFound
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BlockWithTrustedData); ok {
+func (x *KaspidMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BlockWithTrustedData); ok {
 		return x.BlockWithTrustedData
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_DoneBlocksWithTrustedData); ok {
+func (x *KaspidMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_DoneBlocksWithTrustedData); ok {
 		return x.DoneBlocksWithTrustedData
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestPruningPointAndItsAnticone); ok {
+func (x *KaspidMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestPruningPointAndItsAnticone); ok {
 		return x.RequestPruningPointAndItsAnticone
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlockHeaders() *BlockHeadersMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BlockHeaders); ok {
+func (x *KaspidMessage) GetBlockHeaders() *BlockHeadersMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BlockHeaders); ok {
 		return x.BlockHeaders
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestNextHeaders); ok {
+func (x *KaspidMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestNextHeaders); ok {
 		return x.RequestNextHeaders
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetDoneHeaders() *DoneHeadersMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_DoneHeaders); ok {
+func (x *KaspidMessage) GetDoneHeaders() *DoneHeadersMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_DoneHeaders); ok {
 		return x.DoneHeaders
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestPruningPointUTXOSet); ok {
+func (x *KaspidMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestPruningPointUTXOSet); ok {
 		return x.RequestPruningPointUTXOSet
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestHeaders() *RequestHeadersMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestHeaders); ok {
+func (x *KaspidMessage) GetRequestHeaders() *RequestHeadersMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestHeaders); ok {
 		return x.RequestHeaders
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestBlockLocator); ok {
+func (x *KaspidMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestBlockLocator); ok {
 		return x.RequestBlockLocator
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPruningPoints() *PruningPointsMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_PruningPoints); ok {
+func (x *KaspidMessage) GetPruningPoints() *PruningPointsMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_PruningPoints); ok {
 		return x.PruningPoints
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestPruningPointProof); ok {
+func (x *KaspidMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestPruningPointProof); ok {
 		return x.RequestPruningPointProof
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPruningPointProof() *PruningPointProofMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_PruningPointProof); ok {
+func (x *KaspidMessage) GetPruningPointProof() *PruningPointProofMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_PruningPointProof); ok {
 		return x.PruningPointProof
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetReady() *ReadyMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_Ready); ok {
+func (x *KaspidMessage) GetReady() *ReadyMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_Ready); ok {
 		return x.Ready
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
-	if x, ok := x.GetPayload().(*KaspadMessage_BlockWithTrustedDataV4); ok {
+func (x *KaspidMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
+	if x, ok := x.GetPayload().(*KaspidMessage_BlockWithTrustedDataV4); ok {
 		return x.BlockWithTrustedDataV4
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetTrustedData() *TrustedDataMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_TrustedData); ok {
+func (x *KaspidMessage) GetTrustedData() *TrustedDataMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_TrustedData); ok {
 		return x.TrustedData
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestIBDChainBlockLocator); ok {
+func (x *KaspidMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestIBDChainBlockLocator); ok {
 		return x.RequestIBDChainBlockLocator
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_IbdChainBlockLocator); ok {
+func (x *KaspidMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_IbdChainBlockLocator); ok {
 		return x.IbdChainBlockLocator
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestAnticone() *RequestAnticoneMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestAnticone); ok {
+func (x *KaspidMessage) GetRequestAnticone() *RequestAnticoneMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestAnticone); ok {
 		return x.RequestAnticone
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
+func (x *KaspidMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
 		return x.RequestNextPruningPointAndItsAnticoneBlocks
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetCurrentNetworkRequest); ok {
+func (x *KaspidMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetCurrentNetworkRequest); ok {
 		return x.GetCurrentNetworkRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetCurrentNetworkResponse); ok {
+func (x *KaspidMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetCurrentNetworkResponse); ok {
 		return x.GetCurrentNetworkResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_SubmitBlockRequest); ok {
+func (x *KaspidMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_SubmitBlockRequest); ok {
 		return x.SubmitBlockRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_SubmitBlockResponse); ok {
+func (x *KaspidMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_SubmitBlockResponse); ok {
 		return x.SubmitBlockResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockTemplateRequest); ok {
+func (x *KaspidMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockTemplateRequest); ok {
 		return x.GetBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockTemplateResponse); ok {
+func (x *KaspidMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockTemplateResponse); ok {
 		return x.GetBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyBlockAddedRequest); ok {
+func (x *KaspidMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyBlockAddedRequest); ok {
 		return x.NotifyBlockAddedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyBlockAddedResponse); ok {
+func (x *KaspidMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyBlockAddedResponse); ok {
 		return x.NotifyBlockAddedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BlockAddedNotification); ok {
+func (x *KaspidMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BlockAddedNotification); ok {
 		return x.BlockAddedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetPeerAddressesRequest); ok {
+func (x *KaspidMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetPeerAddressesRequest); ok {
 		return x.GetPeerAddressesRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetPeerAddressesResponse); ok {
+func (x *KaspidMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetPeerAddressesResponse); ok {
 		return x.GetPeerAddressesResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetSelectedTipHashRequest); ok {
+func (x *KaspidMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetSelectedTipHashRequest); ok {
 		return x.GetSelectedTipHashRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetSelectedTipHashResponse); ok {
+func (x *KaspidMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetSelectedTipHashResponse); ok {
 		return x.GetSelectedTipHashResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntryRequest); ok {
+func (x *KaspidMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntryRequest); ok {
 		return x.GetMempoolEntryRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntryResponse); ok {
+func (x *KaspidMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntryResponse); ok {
 		return x.GetMempoolEntryResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetConnectedPeerInfoRequest); ok {
+func (x *KaspidMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetConnectedPeerInfoRequest); ok {
 		return x.GetConnectedPeerInfoRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetConnectedPeerInfoResponse); ok {
+func (x *KaspidMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetConnectedPeerInfoResponse); ok {
 		return x.GetConnectedPeerInfoResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetAddPeerRequest() *AddPeerRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_AddPeerRequest); ok {
+func (x *KaspidMessage) GetAddPeerRequest() *AddPeerRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_AddPeerRequest); ok {
 		return x.AddPeerRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetAddPeerResponse() *AddPeerResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_AddPeerResponse); ok {
+func (x *KaspidMessage) GetAddPeerResponse() *AddPeerResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_AddPeerResponse); ok {
 		return x.AddPeerResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_SubmitTransactionRequest); ok {
+func (x *KaspidMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_SubmitTransactionRequest); ok {
 		return x.SubmitTransactionRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_SubmitTransactionResponse); ok {
+func (x *KaspidMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_SubmitTransactionResponse); ok {
 		return x.SubmitTransactionResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
+func (x *KaspidMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentChainChangedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
+func (x *KaspidMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentChainChangedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_VirtualSelectedParentChainChangedNotification); ok {
+func (x *KaspidMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_VirtualSelectedParentChainChangedNotification); ok {
 		return x.VirtualSelectedParentChainChangedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockRequest() *GetBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockRequest); ok {
+func (x *KaspidMessage) GetGetBlockRequest() *GetBlockRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockRequest); ok {
 		return x.GetBlockRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockResponse() *GetBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockResponse); ok {
+func (x *KaspidMessage) GetGetBlockResponse() *GetBlockResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockResponse); ok {
 		return x.GetBlockResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetSubnetworkRequest); ok {
+func (x *KaspidMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetSubnetworkRequest); ok {
 		return x.GetSubnetworkRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetSubnetworkResponse); ok {
+func (x *KaspidMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetSubnetworkResponse); ok {
 		return x.GetSubnetworkResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
+func (x *KaspidMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
 		return x.GetVirtualSelectedParentChainFromBlockRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
+func (x *KaspidMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
 		return x.GetVirtualSelectedParentChainFromBlockResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlocksRequest); ok {
+func (x *KaspidMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlocksRequest); ok {
 		return x.GetBlocksRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlocksResponse); ok {
+func (x *KaspidMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlocksResponse); ok {
 		return x.GetBlocksResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockCountRequest); ok {
+func (x *KaspidMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockCountRequest); ok {
 		return x.GetBlockCountRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockCountResponse); ok {
+func (x *KaspidMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockCountResponse); ok {
 		return x.GetBlockCountResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockDagInfoRequest); ok {
+func (x *KaspidMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockDagInfoRequest); ok {
 		return x.GetBlockDagInfoRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBlockDagInfoResponse); ok {
+func (x *KaspidMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBlockDagInfoResponse); ok {
 		return x.GetBlockDagInfoResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_ResolveFinalityConflictRequest); ok {
+func (x *KaspidMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_ResolveFinalityConflictRequest); ok {
 		return x.ResolveFinalityConflictRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_ResolveFinalityConflictResponse); ok {
+func (x *KaspidMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_ResolveFinalityConflictResponse); ok {
 		return x.ResolveFinalityConflictResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyFinalityConflictsRequest); ok {
+func (x *KaspidMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyFinalityConflictsRequest); ok {
 		return x.NotifyFinalityConflictsRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyFinalityConflictsResponse); ok {
+func (x *KaspidMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyFinalityConflictsResponse); ok {
 		return x.NotifyFinalityConflictsResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_FinalityConflictNotification); ok {
+func (x *KaspidMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_FinalityConflictNotification); ok {
 		return x.FinalityConflictNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_FinalityConflictResolvedNotification); ok {
+func (x *KaspidMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_FinalityConflictResolvedNotification); ok {
 		return x.FinalityConflictResolvedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntriesRequest); ok {
+func (x *KaspidMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntriesRequest); ok {
 		return x.GetMempoolEntriesRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntriesResponse); ok {
+func (x *KaspidMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntriesResponse); ok {
 		return x.GetMempoolEntriesResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetShutDownRequest() *ShutDownRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_ShutDownRequest); ok {
+func (x *KaspidMessage) GetShutDownRequest() *ShutDownRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_ShutDownRequest); ok {
 		return x.ShutDownRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetShutDownResponse() *ShutDownResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_ShutDownResponse); ok {
+func (x *KaspidMessage) GetShutDownResponse() *ShutDownResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_ShutDownResponse); ok {
 		return x.ShutDownResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetHeadersRequest); ok {
+func (x *KaspidMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetHeadersRequest); ok {
 		return x.GetHeadersRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetHeadersResponse); ok {
+func (x *KaspidMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetHeadersResponse); ok {
 		return x.GetHeadersResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyUtxosChangedRequest); ok {
+func (x *KaspidMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyUtxosChangedRequest); ok {
 		return x.NotifyUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyUtxosChangedResponse); ok {
+func (x *KaspidMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyUtxosChangedResponse); ok {
 		return x.NotifyUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_UtxosChangedNotification); ok {
+func (x *KaspidMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_UtxosChangedNotification); ok {
 		return x.UtxosChangedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetUtxosByAddressesRequest); ok {
+func (x *KaspidMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetUtxosByAddressesRequest); ok {
 		return x.GetUtxosByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetUtxosByAddressesResponse); ok {
+func (x *KaspidMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetUtxosByAddressesResponse); ok {
 		return x.GetUtxosByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
+func (x *KaspidMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
 		return x.GetVirtualSelectedParentBlueScoreRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
+func (x *KaspidMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
 		return x.GetVirtualSelectedParentBlueScoreResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
+func (x *KaspidMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
+func (x *KaspidMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
+func (x *KaspidMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
 		return x.VirtualSelectedParentBlueScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBanRequest() *BanRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BanRequest); ok {
+func (x *KaspidMessage) GetBanRequest() *BanRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BanRequest); ok {
 		return x.BanRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetBanResponse() *BanResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_BanResponse); ok {
+func (x *KaspidMessage) GetBanResponse() *BanResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_BanResponse); ok {
 		return x.BanResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetUnbanRequest() *UnbanRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_UnbanRequest); ok {
+func (x *KaspidMessage) GetUnbanRequest() *UnbanRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_UnbanRequest); ok {
 		return x.UnbanRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetUnbanResponse() *UnbanResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_UnbanResponse); ok {
+func (x *KaspidMessage) GetUnbanResponse() *UnbanResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_UnbanResponse); ok {
 		return x.UnbanResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetInfoRequest() *GetInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetInfoRequest); ok {
+func (x *KaspidMessage) GetGetInfoRequest() *GetInfoRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetInfoRequest); ok {
 		return x.GetInfoRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetInfoResponse() *GetInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetInfoResponse); ok {
+func (x *KaspidMessage) GetGetInfoResponse() *GetInfoResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetInfoResponse); ok {
 		return x.GetInfoResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_StopNotifyingUtxosChangedRequest); ok {
+func (x *KaspidMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_StopNotifyingUtxosChangedRequest); ok {
 		return x.StopNotifyingUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_StopNotifyingUtxosChangedResponse); ok {
+func (x *KaspidMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_StopNotifyingUtxosChangedResponse); ok {
 		return x.StopNotifyingUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
+func (x *KaspidMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
 		return x.NotifyPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
+func (x *KaspidMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
 		return x.NotifyPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_PruningPointUTXOSetOverrideNotification); ok {
+func (x *KaspidMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_PruningPointUTXOSetOverrideNotification); ok {
 		return x.PruningPointUTXOSetOverrideNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
+func (x *KaspidMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
+func (x *KaspidMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_EstimateNetworkHashesPerSecondRequest); ok {
+func (x *KaspidMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_EstimateNetworkHashesPerSecondRequest); ok {
 		return x.EstimateNetworkHashesPerSecondRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_EstimateNetworkHashesPerSecondResponse); ok {
+func (x *KaspidMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_EstimateNetworkHashesPerSecondResponse); ok {
 		return x.EstimateNetworkHashesPerSecondResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualDaaScoreChangedRequest); ok {
+func (x *KaspidMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualDaaScoreChangedRequest); ok {
 		return x.NotifyVirtualDaaScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyVirtualDaaScoreChangedResponse); ok {
+func (x *KaspidMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyVirtualDaaScoreChangedResponse); ok {
 		return x.NotifyVirtualDaaScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_VirtualDaaScoreChangedNotification); ok {
+func (x *KaspidMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_VirtualDaaScoreChangedNotification); ok {
 		return x.VirtualDaaScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBalanceByAddressRequest); ok {
+func (x *KaspidMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBalanceByAddressRequest); ok {
 		return x.GetBalanceByAddressRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBalanceByAddressResponse); ok {
+func (x *KaspidMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBalanceByAddressResponse); ok {
 		return x.GetBalanceByAddressResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBalancesByAddressesRequest); ok {
+func (x *KaspidMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBalancesByAddressesRequest); ok {
 		return x.GetBalancesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetBalancesByAddressesResponse); ok {
+func (x *KaspidMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetBalancesByAddressesResponse); ok {
 		return x.GetBalancesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyNewBlockTemplateRequest); ok {
+func (x *KaspidMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyNewBlockTemplateRequest); ok {
 		return x.NotifyNewBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NotifyNewBlockTemplateResponse); ok {
+func (x *KaspidMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NotifyNewBlockTemplateResponse); ok {
 		return x.NotifyNewBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_NewBlockTemplateNotification); ok {
+func (x *KaspidMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_NewBlockTemplateNotification); ok {
 		return x.NewBlockTemplateNotification
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntriesByAddressesRequest); ok {
+func (x *KaspidMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntriesByAddressesRequest); ok {
 		return x.GetMempoolEntriesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetMempoolEntriesByAddressesResponse); ok {
+func (x *KaspidMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetMempoolEntriesByAddressesResponse); ok {
 		return x.GetMempoolEntriesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetCoinSupplyRequest); ok {
+func (x *KaspidMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetCoinSupplyRequest); ok {
 		return x.GetCoinSupplyRequest
 	}
 	return nil
 }
 
-func (x *KaspadMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
-	if x, ok := x.GetPayload().(*KaspadMessage_GetCoinSupplyResponse); ok {
+func (x *KaspidMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
+	if x, ok := x.GetPayload().(*KaspidMessage_GetCoinSupplyResponse); ok {
 		return x.GetCoinSupplyResponse
 	}
 	return nil
 }
 
-type isKaspadMessage_Payload interface {
-	isKaspadMessage_Payload()
+type isKaspidMessage_Payload interface {
+	isKaspidMessage_Payload()
 }
 
-type KaspadMessage_Addresses struct {
+type KaspidMessage_Addresses struct {
 	Addresses *AddressesMessage `protobuf:"bytes,1,opt,name=addresses,proto3,oneof"`
 }
 
-type KaspadMessage_Block struct {
+type KaspidMessage_Block struct {
 	Block *BlockMessage `protobuf:"bytes,2,opt,name=block,proto3,oneof"`
 }
 
-type KaspadMessage_Transaction struct {
+type KaspidMessage_Transaction struct {
 	Transaction *TransactionMessage `protobuf:"bytes,3,opt,name=transaction,proto3,oneof"`
 }
 
-type KaspadMessage_BlockLocator struct {
+type KaspidMessage_BlockLocator struct {
 	BlockLocator *BlockLocatorMessage `protobuf:"bytes,5,opt,name=blockLocator,proto3,oneof"`
 }
 
-type KaspadMessage_RequestAddresses struct {
+type KaspidMessage_RequestAddresses struct {
 	RequestAddresses *RequestAddressesMessage `protobuf:"bytes,6,opt,name=requestAddresses,proto3,oneof"`
 }
 
-type KaspadMessage_RequestRelayBlocks struct {
+type KaspidMessage_RequestRelayBlocks struct {
 	RequestRelayBlocks *RequestRelayBlocksMessage `protobuf:"bytes,10,opt,name=requestRelayBlocks,proto3,oneof"`
 }
 
-type KaspadMessage_RequestTransactions struct {
+type KaspidMessage_RequestTransactions struct {
 	RequestTransactions *RequestTransactionsMessage `protobuf:"bytes,12,opt,name=requestTransactions,proto3,oneof"`
 }
 
-type KaspadMessage_IbdBlock struct {
+type KaspidMessage_IbdBlock struct {
 	IbdBlock *BlockMessage `protobuf:"bytes,13,opt,name=ibdBlock,proto3,oneof"`
 }
 
-type KaspadMessage_InvRelayBlock struct {
+type KaspidMessage_InvRelayBlock struct {
 	InvRelayBlock *InvRelayBlockMessage `protobuf:"bytes,14,opt,name=invRelayBlock,proto3,oneof"`
 }
 
-type KaspadMessage_InvTransactions struct {
+type KaspidMessage_InvTransactions struct {
 	InvTransactions *InvTransactionsMessage `protobuf:"bytes,15,opt,name=invTransactions,proto3,oneof"`
 }
 
-type KaspadMessage_Ping struct {
+type KaspidMessage_Ping struct {
 	Ping *PingMessage `protobuf:"bytes,16,opt,name=ping,proto3,oneof"`
 }
 
-type KaspadMessage_Pong struct {
+type KaspidMessage_Pong struct {
 	Pong *PongMessage `protobuf:"bytes,17,opt,name=pong,proto3,oneof"`
 }
 
-type KaspadMessage_Verack struct {
+type KaspidMessage_Verack struct {
 	Verack *VerackMessage `protobuf:"bytes,19,opt,name=verack,proto3,oneof"`
 }
 
-type KaspadMessage_Version struct {
+type KaspidMessage_Version struct {
 	Version *VersionMessage `protobuf:"bytes,20,opt,name=version,proto3,oneof"`
 }
 
-type KaspadMessage_TransactionNotFound struct {
+type KaspidMessage_TransactionNotFound struct {
 	TransactionNotFound *TransactionNotFoundMessage `protobuf:"bytes,21,opt,name=transactionNotFound,proto3,oneof"`
 }
 
-type KaspadMessage_Reject struct {
+type KaspidMessage_Reject struct {
 	Reject *RejectMessage `protobuf:"bytes,22,opt,name=reject,proto3,oneof"`
 }
 
-type KaspadMessage_PruningPointUtxoSetChunk struct {
+type KaspidMessage_PruningPointUtxoSetChunk struct {
 	PruningPointUtxoSetChunk *PruningPointUtxoSetChunkMessage `protobuf:"bytes,25,opt,name=pruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type KaspadMessage_RequestIBDBlocks struct {
+type KaspidMessage_RequestIBDBlocks struct {
 	RequestIBDBlocks *RequestIBDBlocksMessage `protobuf:"bytes,26,opt,name=requestIBDBlocks,proto3,oneof"`
 }
 
-type KaspadMessage_UnexpectedPruningPoint struct {
+type KaspidMessage_UnexpectedPruningPoint struct {
 	UnexpectedPruningPoint *UnexpectedPruningPointMessage `protobuf:"bytes,27,opt,name=unexpectedPruningPoint,proto3,oneof"`
 }
 
-type KaspadMessage_IbdBlockLocator struct {
+type KaspidMessage_IbdBlockLocator struct {
 	IbdBlockLocator *IbdBlockLocatorMessage `protobuf:"bytes,30,opt,name=ibdBlockLocator,proto3,oneof"`
 }
 
-type KaspadMessage_IbdBlockLocatorHighestHash struct {
+type KaspidMessage_IbdBlockLocatorHighestHash struct {
 	IbdBlockLocatorHighestHash *IbdBlockLocatorHighestHashMessage `protobuf:"bytes,31,opt,name=ibdBlockLocatorHighestHash,proto3,oneof"`
 }
 
-type KaspadMessage_RequestNextPruningPointUtxoSetChunk struct {
+type KaspidMessage_RequestNextPruningPointUtxoSetChunk struct {
 	RequestNextPruningPointUtxoSetChunk *RequestNextPruningPointUtxoSetChunkMessage `protobuf:"bytes,33,opt,name=requestNextPruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type KaspadMessage_DonePruningPointUtxoSetChunks struct {
+type KaspidMessage_DonePruningPointUtxoSetChunks struct {
 	DonePruningPointUtxoSetChunks *DonePruningPointUtxoSetChunksMessage `protobuf:"bytes,34,opt,name=donePruningPointUtxoSetChunks,proto3,oneof"`
 }
 
-type KaspadMessage_IbdBlockLocatorHighestHashNotFound struct {
+type KaspidMessage_IbdBlockLocatorHighestHashNotFound struct {
 	IbdBlockLocatorHighestHashNotFound *IbdBlockLocatorHighestHashNotFoundMessage `protobuf:"bytes,35,opt,name=ibdBlockLocatorHighestHashNotFound,proto3,oneof"`
 }
 
-type KaspadMessage_BlockWithTrustedData struct {
+type KaspidMessage_BlockWithTrustedData struct {
 	BlockWithTrustedData *BlockWithTrustedDataMessage `protobuf:"bytes,36,opt,name=blockWithTrustedData,proto3,oneof"`
 }
 
-type KaspadMessage_DoneBlocksWithTrustedData struct {
+type KaspidMessage_DoneBlocksWithTrustedData struct {
 	DoneBlocksWithTrustedData *DoneBlocksWithTrustedDataMessage `protobuf:"bytes,37,opt,name=doneBlocksWithTrustedData,proto3,oneof"`
 }
 
-type KaspadMessage_RequestPruningPointAndItsAnticone struct {
+type KaspidMessage_RequestPruningPointAndItsAnticone struct {
 	RequestPruningPointAndItsAnticone *RequestPruningPointAndItsAnticoneMessage `protobuf:"bytes,40,opt,name=requestPruningPointAndItsAnticone,proto3,oneof"`
 }
 
-type KaspadMessage_BlockHeaders struct {
+type KaspidMessage_BlockHeaders struct {
 	BlockHeaders *BlockHeadersMessage `protobuf:"bytes,41,opt,name=blockHeaders,proto3,oneof"`
 }
 
-type KaspadMessage_RequestNextHeaders struct {
+type KaspidMessage_RequestNextHeaders struct {
 	RequestNextHeaders *RequestNextHeadersMessage `protobuf:"bytes,42,opt,name=requestNextHeaders,proto3,oneof"`
 }
 
-type KaspadMessage_DoneHeaders struct {
+type KaspidMessage_DoneHeaders struct {
 	DoneHeaders *DoneHeadersMessage `protobuf:"bytes,43,opt,name=DoneHeaders,proto3,oneof"`
 }
 
-type KaspadMessage_RequestPruningPointUTXOSet struct {
+type KaspidMessage_RequestPruningPointUTXOSet struct {
 	RequestPruningPointUTXOSet *RequestPruningPointUTXOSetMessage `protobuf:"bytes,44,opt,name=requestPruningPointUTXOSet,proto3,oneof"`
 }
 
-type KaspadMessage_RequestHeaders struct {
+type KaspidMessage_RequestHeaders struct {
 	RequestHeaders *RequestHeadersMessage `protobuf:"bytes,45,opt,name=requestHeaders,proto3,oneof"`
 }
 
-type KaspadMessage_RequestBlockLocator struct {
+type KaspidMessage_RequestBlockLocator struct {
 	RequestBlockLocator *RequestBlockLocatorMessage `protobuf:"bytes,46,opt,name=requestBlockLocator,proto3,oneof"`
 }
 
-type KaspadMessage_PruningPoints struct {
+type KaspidMessage_PruningPoints struct {
 	PruningPoints *PruningPointsMessage `protobuf:"bytes,47,opt,name=pruningPoints,proto3,oneof"`
 }
 
-type KaspadMessage_RequestPruningPointProof struct {
+type KaspidMessage_RequestPruningPointProof struct {
 	RequestPruningPointProof *RequestPruningPointProofMessage `protobuf:"bytes,48,opt,name=requestPruningPointProof,proto3,oneof"`
 }
 
-type KaspadMessage_PruningPointProof struct {
+type KaspidMessage_PruningPointProof struct {
 	PruningPointProof *PruningPointProofMessage `protobuf:"bytes,49,opt,name=pruningPointProof,proto3,oneof"`
 }
 
-type KaspadMessage_Ready struct {
+type KaspidMessage_Ready struct {
 	Ready *ReadyMessage `protobuf:"bytes,50,opt,name=ready,proto3,oneof"`
 }
 
-type KaspadMessage_BlockWithTrustedDataV4 struct {
+type KaspidMessage_BlockWithTrustedDataV4 struct {
 	BlockWithTrustedDataV4 *BlockWithTrustedDataV4Message `protobuf:"bytes,51,opt,name=blockWithTrustedDataV4,proto3,oneof"`
 }
 
-type KaspadMessage_TrustedData struct {
+type KaspidMessage_TrustedData struct {
 	TrustedData *TrustedDataMessage `protobuf:"bytes,52,opt,name=trustedData,proto3,oneof"`
 }
 
-type KaspadMessage_RequestIBDChainBlockLocator struct {
+type KaspidMessage_RequestIBDChainBlockLocator struct {
 	RequestIBDChainBlockLocator *RequestIBDChainBlockLocatorMessage `protobuf:"bytes,53,opt,name=requestIBDChainBlockLocator,proto3,oneof"`
 }
 
-type KaspadMessage_IbdChainBlockLocator struct {
+type KaspidMessage_IbdChainBlockLocator struct {
 	IbdChainBlockLocator *IbdChainBlockLocatorMessage `protobuf:"bytes,54,opt,name=ibdChainBlockLocator,proto3,oneof"`
 }
 
-type KaspadMessage_RequestAnticone struct {
+type KaspidMessage_RequestAnticone struct {
 	RequestAnticone *RequestAnticoneMessage `protobuf:"bytes,55,opt,name=requestAnticone,proto3,oneof"`
 }
 
-type KaspadMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
+type KaspidMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
 	RequestNextPruningPointAndItsAnticoneBlocks *RequestNextPruningPointAndItsAnticoneBlocksMessage `protobuf:"bytes,56,opt,name=requestNextPruningPointAndItsAnticoneBlocks,proto3,oneof"`
 }
 
-type KaspadMessage_GetCurrentNetworkRequest struct {
+type KaspidMessage_GetCurrentNetworkRequest struct {
 	GetCurrentNetworkRequest *GetCurrentNetworkRequestMessage `protobuf:"bytes,1001,opt,name=getCurrentNetworkRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetCurrentNetworkResponse struct {
+type KaspidMessage_GetCurrentNetworkResponse struct {
 	GetCurrentNetworkResponse *GetCurrentNetworkResponseMessage `protobuf:"bytes,1002,opt,name=getCurrentNetworkResponse,proto3,oneof"`
 }
 
-type KaspadMessage_SubmitBlockRequest struct {
+type KaspidMessage_SubmitBlockRequest struct {
 	SubmitBlockRequest *SubmitBlockRequestMessage `protobuf:"bytes,1003,opt,name=submitBlockRequest,proto3,oneof"`
 }
 
-type KaspadMessage_SubmitBlockResponse struct {
+type KaspidMessage_SubmitBlockResponse struct {
 	SubmitBlockResponse *SubmitBlockResponseMessage `protobuf:"bytes,1004,opt,name=submitBlockResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockTemplateRequest struct {
+type KaspidMessage_GetBlockTemplateRequest struct {
 	GetBlockTemplateRequest *GetBlockTemplateRequestMessage `protobuf:"bytes,1005,opt,name=getBlockTemplateRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockTemplateResponse struct {
+type KaspidMessage_GetBlockTemplateResponse struct {
 	GetBlockTemplateResponse *GetBlockTemplateResponseMessage `protobuf:"bytes,1006,opt,name=getBlockTemplateResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyBlockAddedRequest struct {
+type KaspidMessage_NotifyBlockAddedRequest struct {
 	NotifyBlockAddedRequest *NotifyBlockAddedRequestMessage `protobuf:"bytes,1007,opt,name=notifyBlockAddedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyBlockAddedResponse struct {
+type KaspidMessage_NotifyBlockAddedResponse struct {
 	NotifyBlockAddedResponse *NotifyBlockAddedResponseMessage `protobuf:"bytes,1008,opt,name=notifyBlockAddedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_BlockAddedNotification struct {
+type KaspidMessage_BlockAddedNotification struct {
 	BlockAddedNotification *BlockAddedNotificationMessage `protobuf:"bytes,1009,opt,name=blockAddedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetPeerAddressesRequest struct {
+type KaspidMessage_GetPeerAddressesRequest struct {
 	GetPeerAddressesRequest *GetPeerAddressesRequestMessage `protobuf:"bytes,1010,opt,name=getPeerAddressesRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetPeerAddressesResponse struct {
+type KaspidMessage_GetPeerAddressesResponse struct {
 	GetPeerAddressesResponse *GetPeerAddressesResponseMessage `protobuf:"bytes,1011,opt,name=getPeerAddressesResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetSelectedTipHashRequest struct {
+type KaspidMessage_GetSelectedTipHashRequest struct {
 	GetSelectedTipHashRequest *GetSelectedTipHashRequestMessage `protobuf:"bytes,1012,opt,name=getSelectedTipHashRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetSelectedTipHashResponse struct {
+type KaspidMessage_GetSelectedTipHashResponse struct {
 	GetSelectedTipHashResponse *GetSelectedTipHashResponseMessage `protobuf:"bytes,1013,opt,name=getSelectedTipHashResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntryRequest struct {
+type KaspidMessage_GetMempoolEntryRequest struct {
 	GetMempoolEntryRequest *GetMempoolEntryRequestMessage `protobuf:"bytes,1014,opt,name=getMempoolEntryRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntryResponse struct {
+type KaspidMessage_GetMempoolEntryResponse struct {
 	GetMempoolEntryResponse *GetMempoolEntryResponseMessage `protobuf:"bytes,1015,opt,name=getMempoolEntryResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetConnectedPeerInfoRequest struct {
+type KaspidMessage_GetConnectedPeerInfoRequest struct {
 	GetConnectedPeerInfoRequest *GetConnectedPeerInfoRequestMessage `protobuf:"bytes,1016,opt,name=getConnectedPeerInfoRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetConnectedPeerInfoResponse struct {
+type KaspidMessage_GetConnectedPeerInfoResponse struct {
 	GetConnectedPeerInfoResponse *GetConnectedPeerInfoResponseMessage `protobuf:"bytes,1017,opt,name=getConnectedPeerInfoResponse,proto3,oneof"`
 }
 
-type KaspadMessage_AddPeerRequest struct {
+type KaspidMessage_AddPeerRequest struct {
 	AddPeerRequest *AddPeerRequestMessage `protobuf:"bytes,1018,opt,name=addPeerRequest,proto3,oneof"`
 }
 
-type KaspadMessage_AddPeerResponse struct {
+type KaspidMessage_AddPeerResponse struct {
 	AddPeerResponse *AddPeerResponseMessage `protobuf:"bytes,1019,opt,name=addPeerResponse,proto3,oneof"`
 }
 
-type KaspadMessage_SubmitTransactionRequest struct {
+type KaspidMessage_SubmitTransactionRequest struct {
 	SubmitTransactionRequest *SubmitTransactionRequestMessage `protobuf:"bytes,1020,opt,name=submitTransactionRequest,proto3,oneof"`
 }
 
-type KaspadMessage_SubmitTransactionResponse struct {
+type KaspidMessage_SubmitTransactionResponse struct {
 	SubmitTransactionResponse *SubmitTransactionResponseMessage `protobuf:"bytes,1021,opt,name=submitTransactionResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
+type KaspidMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
 	NotifyVirtualSelectedParentChainChangedRequest *NotifyVirtualSelectedParentChainChangedRequestMessage `protobuf:"bytes,1022,opt,name=notifyVirtualSelectedParentChainChangedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
+type KaspidMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
 	NotifyVirtualSelectedParentChainChangedResponse *NotifyVirtualSelectedParentChainChangedResponseMessage `protobuf:"bytes,1023,opt,name=notifyVirtualSelectedParentChainChangedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_VirtualSelectedParentChainChangedNotification struct {
+type KaspidMessage_VirtualSelectedParentChainChangedNotification struct {
 	VirtualSelectedParentChainChangedNotification *VirtualSelectedParentChainChangedNotificationMessage `protobuf:"bytes,1024,opt,name=virtualSelectedParentChainChangedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockRequest struct {
+type KaspidMessage_GetBlockRequest struct {
 	GetBlockRequest *GetBlockRequestMessage `protobuf:"bytes,1025,opt,name=getBlockRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockResponse struct {
+type KaspidMessage_GetBlockResponse struct {
 	GetBlockResponse *GetBlockResponseMessage `protobuf:"bytes,1026,opt,name=getBlockResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetSubnetworkRequest struct {
+type KaspidMessage_GetSubnetworkRequest struct {
 	GetSubnetworkRequest *GetSubnetworkRequestMessage `protobuf:"bytes,1027,opt,name=getSubnetworkRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetSubnetworkResponse struct {
+type KaspidMessage_GetSubnetworkResponse struct {
 	GetSubnetworkResponse *GetSubnetworkResponseMessage `protobuf:"bytes,1028,opt,name=getSubnetworkResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
+type KaspidMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
 	GetVirtualSelectedParentChainFromBlockRequest *GetVirtualSelectedParentChainFromBlockRequestMessage `protobuf:"bytes,1029,opt,name=getVirtualSelectedParentChainFromBlockRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
+type KaspidMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
 	GetVirtualSelectedParentChainFromBlockResponse *GetVirtualSelectedParentChainFromBlockResponseMessage `protobuf:"bytes,1030,opt,name=getVirtualSelectedParentChainFromBlockResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlocksRequest struct {
+type KaspidMessage_GetBlocksRequest struct {
 	GetBlocksRequest *GetBlocksRequestMessage `protobuf:"bytes,1031,opt,name=getBlocksRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlocksResponse struct {
+type KaspidMessage_GetBlocksResponse struct {
 	GetBlocksResponse *GetBlocksResponseMessage `protobuf:"bytes,1032,opt,name=getBlocksResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockCountRequest struct {
+type KaspidMessage_GetBlockCountRequest struct {
 	GetBlockCountRequest *GetBlockCountRequestMessage `protobuf:"bytes,1033,opt,name=getBlockCountRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockCountResponse struct {
+type KaspidMessage_GetBlockCountResponse struct {
 	GetBlockCountResponse *GetBlockCountResponseMessage `protobuf:"bytes,1034,opt,name=getBlockCountResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockDagInfoRequest struct {
+type KaspidMessage_GetBlockDagInfoRequest struct {
 	GetBlockDagInfoRequest *GetBlockDagInfoRequestMessage `protobuf:"bytes,1035,opt,name=getBlockDagInfoRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBlockDagInfoResponse struct {
+type KaspidMessage_GetBlockDagInfoResponse struct {
 	GetBlockDagInfoResponse *GetBlockDagInfoResponseMessage `protobuf:"bytes,1036,opt,name=getBlockDagInfoResponse,proto3,oneof"`
 }
 
-type KaspadMessage_ResolveFinalityConflictRequest struct {
+type KaspidMessage_ResolveFinalityConflictRequest struct {
 	ResolveFinalityConflictRequest *ResolveFinalityConflictRequestMessage `protobuf:"bytes,1037,opt,name=resolveFinalityConflictRequest,proto3,oneof"`
 }
 
-type KaspadMessage_ResolveFinalityConflictResponse struct {
+type KaspidMessage_ResolveFinalityConflictResponse struct {
 	ResolveFinalityConflictResponse *ResolveFinalityConflictResponseMessage `protobuf:"bytes,1038,opt,name=resolveFinalityConflictResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyFinalityConflictsRequest struct {
+type KaspidMessage_NotifyFinalityConflictsRequest struct {
 	NotifyFinalityConflictsRequest *NotifyFinalityConflictsRequestMessage `protobuf:"bytes,1039,opt,name=notifyFinalityConflictsRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyFinalityConflictsResponse struct {
+type KaspidMessage_NotifyFinalityConflictsResponse struct {
 	NotifyFinalityConflictsResponse *NotifyFinalityConflictsResponseMessage `protobuf:"bytes,1040,opt,name=notifyFinalityConflictsResponse,proto3,oneof"`
 }
 
-type KaspadMessage_FinalityConflictNotification struct {
+type KaspidMessage_FinalityConflictNotification struct {
 	FinalityConflictNotification *FinalityConflictNotificationMessage `protobuf:"bytes,1041,opt,name=finalityConflictNotification,proto3,oneof"`
 }
 
-type KaspadMessage_FinalityConflictResolvedNotification struct {
+type KaspidMessage_FinalityConflictResolvedNotification struct {
 	FinalityConflictResolvedNotification *FinalityConflictResolvedNotificationMessage `protobuf:"bytes,1042,opt,name=finalityConflictResolvedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntriesRequest struct {
+type KaspidMessage_GetMempoolEntriesRequest struct {
 	GetMempoolEntriesRequest *GetMempoolEntriesRequestMessage `protobuf:"bytes,1043,opt,name=getMempoolEntriesRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntriesResponse struct {
+type KaspidMessage_GetMempoolEntriesResponse struct {
 	GetMempoolEntriesResponse *GetMempoolEntriesResponseMessage `protobuf:"bytes,1044,opt,name=getMempoolEntriesResponse,proto3,oneof"`
 }
 
-type KaspadMessage_ShutDownRequest struct {
+type KaspidMessage_ShutDownRequest struct {
 	ShutDownRequest *ShutDownRequestMessage `protobuf:"bytes,1045,opt,name=shutDownRequest,proto3,oneof"`
 }
 
-type KaspadMessage_ShutDownResponse struct {
+type KaspidMessage_ShutDownResponse struct {
 	ShutDownResponse *ShutDownResponseMessage `protobuf:"bytes,1046,opt,name=shutDownResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetHeadersRequest struct {
+type KaspidMessage_GetHeadersRequest struct {
 	GetHeadersRequest *GetHeadersRequestMessage `protobuf:"bytes,1047,opt,name=getHeadersRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetHeadersResponse struct {
+type KaspidMessage_GetHeadersResponse struct {
 	GetHeadersResponse *GetHeadersResponseMessage `protobuf:"bytes,1048,opt,name=getHeadersResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyUtxosChangedRequest struct {
+type KaspidMessage_NotifyUtxosChangedRequest struct {
 	NotifyUtxosChangedRequest *NotifyUtxosChangedRequestMessage `protobuf:"bytes,1049,opt,name=notifyUtxosChangedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyUtxosChangedResponse struct {
+type KaspidMessage_NotifyUtxosChangedResponse struct {
 	NotifyUtxosChangedResponse *NotifyUtxosChangedResponseMessage `protobuf:"bytes,1050,opt,name=notifyUtxosChangedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_UtxosChangedNotification struct {
+type KaspidMessage_UtxosChangedNotification struct {
 	UtxosChangedNotification *UtxosChangedNotificationMessage `protobuf:"bytes,1051,opt,name=utxosChangedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetUtxosByAddressesRequest struct {
+type KaspidMessage_GetUtxosByAddressesRequest struct {
 	GetUtxosByAddressesRequest *GetUtxosByAddressesRequestMessage `protobuf:"bytes,1052,opt,name=getUtxosByAddressesRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetUtxosByAddressesResponse struct {
+type KaspidMessage_GetUtxosByAddressesResponse struct {
 	GetUtxosByAddressesResponse *GetUtxosByAddressesResponseMessage `protobuf:"bytes,1053,opt,name=getUtxosByAddressesResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetVirtualSelectedParentBlueScoreRequest struct {
+type KaspidMessage_GetVirtualSelectedParentBlueScoreRequest struct {
 	GetVirtualSelectedParentBlueScoreRequest *GetVirtualSelectedParentBlueScoreRequestMessage `protobuf:"bytes,1054,opt,name=getVirtualSelectedParentBlueScoreRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetVirtualSelectedParentBlueScoreResponse struct {
+type KaspidMessage_GetVirtualSelectedParentBlueScoreResponse struct {
 	GetVirtualSelectedParentBlueScoreResponse *GetVirtualSelectedParentBlueScoreResponseMessage `protobuf:"bytes,1055,opt,name=getVirtualSelectedParentBlueScoreResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
+type KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
 	NotifyVirtualSelectedParentBlueScoreChangedRequest *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage `protobuf:"bytes,1056,opt,name=notifyVirtualSelectedParentBlueScoreChangedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
+type KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
 	NotifyVirtualSelectedParentBlueScoreChangedResponse *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage `protobuf:"bytes,1057,opt,name=notifyVirtualSelectedParentBlueScoreChangedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
+type KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
 	VirtualSelectedParentBlueScoreChangedNotification *VirtualSelectedParentBlueScoreChangedNotificationMessage `protobuf:"bytes,1058,opt,name=virtualSelectedParentBlueScoreChangedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_BanRequest struct {
+type KaspidMessage_BanRequest struct {
 	BanRequest *BanRequestMessage `protobuf:"bytes,1059,opt,name=banRequest,proto3,oneof"`
 }
 
-type KaspadMessage_BanResponse struct {
+type KaspidMessage_BanResponse struct {
 	BanResponse *BanResponseMessage `protobuf:"bytes,1060,opt,name=banResponse,proto3,oneof"`
 }
 
-type KaspadMessage_UnbanRequest struct {
+type KaspidMessage_UnbanRequest struct {
 	UnbanRequest *UnbanRequestMessage `protobuf:"bytes,1061,opt,name=unbanRequest,proto3,oneof"`
 }
 
-type KaspadMessage_UnbanResponse struct {
+type KaspidMessage_UnbanResponse struct {
 	UnbanResponse *UnbanResponseMessage `protobuf:"bytes,1062,opt,name=unbanResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetInfoRequest struct {
+type KaspidMessage_GetInfoRequest struct {
 	GetInfoRequest *GetInfoRequestMessage `protobuf:"bytes,1063,opt,name=getInfoRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetInfoResponse struct {
+type KaspidMessage_GetInfoResponse struct {
 	GetInfoResponse *GetInfoResponseMessage `protobuf:"bytes,1064,opt,name=getInfoResponse,proto3,oneof"`
 }
 
-type KaspadMessage_StopNotifyingUtxosChangedRequest struct {
+type KaspidMessage_StopNotifyingUtxosChangedRequest struct {
 	StopNotifyingUtxosChangedRequest *StopNotifyingUtxosChangedRequestMessage `protobuf:"bytes,1065,opt,name=stopNotifyingUtxosChangedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_StopNotifyingUtxosChangedResponse struct {
+type KaspidMessage_StopNotifyingUtxosChangedResponse struct {
 	StopNotifyingUtxosChangedResponse *StopNotifyingUtxosChangedResponseMessage `protobuf:"bytes,1066,opt,name=stopNotifyingUtxosChangedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
+type KaspidMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
 	NotifyPruningPointUTXOSetOverrideRequest *NotifyPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1067,opt,name=notifyPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
+type KaspidMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
 	NotifyPruningPointUTXOSetOverrideResponse *NotifyPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1068,opt,name=notifyPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type KaspadMessage_PruningPointUTXOSetOverrideNotification struct {
+type KaspidMessage_PruningPointUTXOSetOverrideNotification struct {
 	PruningPointUTXOSetOverrideNotification *PruningPointUTXOSetOverrideNotificationMessage `protobuf:"bytes,1069,opt,name=pruningPointUTXOSetOverrideNotification,proto3,oneof"`
 }
 
-type KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
+type KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
 	StopNotifyingPruningPointUTXOSetOverrideRequest *StopNotifyingPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1070,opt,name=stopNotifyingPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
+type KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
 	StopNotifyingPruningPointUTXOSetOverrideResponse *StopNotifyingPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1071,opt,name=stopNotifyingPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type KaspadMessage_EstimateNetworkHashesPerSecondRequest struct {
+type KaspidMessage_EstimateNetworkHashesPerSecondRequest struct {
 	EstimateNetworkHashesPerSecondRequest *EstimateNetworkHashesPerSecondRequestMessage `protobuf:"bytes,1072,opt,name=estimateNetworkHashesPerSecondRequest,proto3,oneof"`
 }
 
-type KaspadMessage_EstimateNetworkHashesPerSecondResponse struct {
+type KaspidMessage_EstimateNetworkHashesPerSecondResponse struct {
 	EstimateNetworkHashesPerSecondResponse *EstimateNetworkHashesPerSecondResponseMessage `protobuf:"bytes,1073,opt,name=estimateNetworkHashesPerSecondResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualDaaScoreChangedRequest struct {
+type KaspidMessage_NotifyVirtualDaaScoreChangedRequest struct {
 	NotifyVirtualDaaScoreChangedRequest *NotifyVirtualDaaScoreChangedRequestMessage `protobuf:"bytes,1074,opt,name=notifyVirtualDaaScoreChangedRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyVirtualDaaScoreChangedResponse struct {
+type KaspidMessage_NotifyVirtualDaaScoreChangedResponse struct {
 	NotifyVirtualDaaScoreChangedResponse *NotifyVirtualDaaScoreChangedResponseMessage `protobuf:"bytes,1075,opt,name=notifyVirtualDaaScoreChangedResponse,proto3,oneof"`
 }
 
-type KaspadMessage_VirtualDaaScoreChangedNotification struct {
+type KaspidMessage_VirtualDaaScoreChangedNotification struct {
 	VirtualDaaScoreChangedNotification *VirtualDaaScoreChangedNotificationMessage `protobuf:"bytes,1076,opt,name=virtualDaaScoreChangedNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetBalanceByAddressRequest struct {
+type KaspidMessage_GetBalanceByAddressRequest struct {
 	GetBalanceByAddressRequest *GetBalanceByAddressRequestMessage `protobuf:"bytes,1077,opt,name=getBalanceByAddressRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBalanceByAddressResponse struct {
+type KaspidMessage_GetBalanceByAddressResponse struct {
 	GetBalanceByAddressResponse *GetBalanceByAddressResponseMessage `protobuf:"bytes,1078,opt,name=getBalanceByAddressResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetBalancesByAddressesRequest struct {
+type KaspidMessage_GetBalancesByAddressesRequest struct {
 	GetBalancesByAddressesRequest *GetBalancesByAddressesRequestMessage `protobuf:"bytes,1079,opt,name=getBalancesByAddressesRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetBalancesByAddressesResponse struct {
+type KaspidMessage_GetBalancesByAddressesResponse struct {
 	GetBalancesByAddressesResponse *GetBalancesByAddressesResponseMessage `protobuf:"bytes,1080,opt,name=getBalancesByAddressesResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyNewBlockTemplateRequest struct {
+type KaspidMessage_NotifyNewBlockTemplateRequest struct {
 	NotifyNewBlockTemplateRequest *NotifyNewBlockTemplateRequestMessage `protobuf:"bytes,1081,opt,name=notifyNewBlockTemplateRequest,proto3,oneof"`
 }
 
-type KaspadMessage_NotifyNewBlockTemplateResponse struct {
+type KaspidMessage_NotifyNewBlockTemplateResponse struct {
 	NotifyNewBlockTemplateResponse *NotifyNewBlockTemplateResponseMessage `protobuf:"bytes,1082,opt,name=notifyNewBlockTemplateResponse,proto3,oneof"`
 }
 
-type KaspadMessage_NewBlockTemplateNotification struct {
+type KaspidMessage_NewBlockTemplateNotification struct {
 	NewBlockTemplateNotification *NewBlockTemplateNotificationMessage `protobuf:"bytes,1083,opt,name=newBlockTemplateNotification,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntriesByAddressesRequest struct {
+type KaspidMessage_GetMempoolEntriesByAddressesRequest struct {
 	GetMempoolEntriesByAddressesRequest *GetMempoolEntriesByAddressesRequestMessage `protobuf:"bytes,1084,opt,name=getMempoolEntriesByAddressesRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetMempoolEntriesByAddressesResponse struct {
+type KaspidMessage_GetMempoolEntriesByAddressesResponse struct {
 	GetMempoolEntriesByAddressesResponse *GetMempoolEntriesByAddressesResponseMessage `protobuf:"bytes,1085,opt,name=getMempoolEntriesByAddressesResponse,proto3,oneof"`
 }
 
-type KaspadMessage_GetCoinSupplyRequest struct {
+type KaspidMessage_GetCoinSupplyRequest struct {
 	GetCoinSupplyRequest *GetCoinSupplyRequestMessage `protobuf:"bytes,1086,opt,name=getCoinSupplyRequest,proto3,oneof"`
 }
 
-type KaspadMessage_GetCoinSupplyResponse struct {
+type KaspidMessage_GetCoinSupplyResponse struct {
 	GetCoinSupplyResponse *GetCoinSupplyResponseMessage `protobuf:"bytes,1087,opt,name=getCoinSupplyResponse,proto3,oneof"`
 }
 
-func (*KaspadMessage_Addresses) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Addresses) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Block) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Block) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Transaction) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Transaction) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BlockLocator) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BlockLocator) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestAddresses) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestAddresses) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestRelayBlocks) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestRelayBlocks) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestTransactions) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestTransactions) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_IbdBlock) isKaspadMessage_Payload() {}
+func (*KaspidMessage_IbdBlock) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_InvRelayBlock) isKaspadMessage_Payload() {}
+func (*KaspidMessage_InvRelayBlock) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_InvTransactions) isKaspadMessage_Payload() {}
+func (*KaspidMessage_InvTransactions) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Ping) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Ping) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Pong) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Pong) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Verack) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Verack) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Version) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Version) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_TransactionNotFound) isKaspadMessage_Payload() {}
+func (*KaspidMessage_TransactionNotFound) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Reject) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Reject) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_PruningPointUtxoSetChunk) isKaspadMessage_Payload() {}
+func (*KaspidMessage_PruningPointUtxoSetChunk) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestIBDBlocks) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestIBDBlocks) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_UnexpectedPruningPoint) isKaspadMessage_Payload() {}
+func (*KaspidMessage_UnexpectedPruningPoint) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_IbdBlockLocator) isKaspadMessage_Payload() {}
+func (*KaspidMessage_IbdBlockLocator) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_IbdBlockLocatorHighestHash) isKaspadMessage_Payload() {}
+func (*KaspidMessage_IbdBlockLocatorHighestHash) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestNextPruningPointUtxoSetChunk) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestNextPruningPointUtxoSetChunk) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_DonePruningPointUtxoSetChunks) isKaspadMessage_Payload() {}
+func (*KaspidMessage_DonePruningPointUtxoSetChunks) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_IbdBlockLocatorHighestHashNotFound) isKaspadMessage_Payload() {}
+func (*KaspidMessage_IbdBlockLocatorHighestHashNotFound) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BlockWithTrustedData) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BlockWithTrustedData) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_DoneBlocksWithTrustedData) isKaspadMessage_Payload() {}
+func (*KaspidMessage_DoneBlocksWithTrustedData) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestPruningPointAndItsAnticone) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestPruningPointAndItsAnticone) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BlockHeaders) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BlockHeaders) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestNextHeaders) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestNextHeaders) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_DoneHeaders) isKaspadMessage_Payload() {}
+func (*KaspidMessage_DoneHeaders) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestPruningPointUTXOSet) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestPruningPointUTXOSet) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestHeaders) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestHeaders) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestBlockLocator) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestBlockLocator) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_PruningPoints) isKaspadMessage_Payload() {}
+func (*KaspidMessage_PruningPoints) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestPruningPointProof) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestPruningPointProof) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_PruningPointProof) isKaspadMessage_Payload() {}
+func (*KaspidMessage_PruningPointProof) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_Ready) isKaspadMessage_Payload() {}
+func (*KaspidMessage_Ready) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BlockWithTrustedDataV4) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BlockWithTrustedDataV4) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_TrustedData) isKaspadMessage_Payload() {}
+func (*KaspidMessage_TrustedData) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestIBDChainBlockLocator) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestIBDChainBlockLocator) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_IbdChainBlockLocator) isKaspadMessage_Payload() {}
+func (*KaspidMessage_IbdChainBlockLocator) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestAnticone) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestAnticone) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_RequestNextPruningPointAndItsAnticoneBlocks) isKaspadMessage_Payload() {}
+func (*KaspidMessage_RequestNextPruningPointAndItsAnticoneBlocks) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetCurrentNetworkRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetCurrentNetworkRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetCurrentNetworkResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetCurrentNetworkResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_SubmitBlockRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_SubmitBlockRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_SubmitBlockResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_SubmitBlockResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockTemplateRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockTemplateRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockTemplateResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockTemplateResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyBlockAddedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyBlockAddedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyBlockAddedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyBlockAddedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BlockAddedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BlockAddedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetPeerAddressesRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetPeerAddressesRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetPeerAddressesResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetPeerAddressesResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetSelectedTipHashRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetSelectedTipHashRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetSelectedTipHashResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetSelectedTipHashResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntryRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntryRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntryResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntryResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetConnectedPeerInfoRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetConnectedPeerInfoRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetConnectedPeerInfoResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetConnectedPeerInfoResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_AddPeerRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_AddPeerRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_AddPeerResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_AddPeerResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_SubmitTransactionRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_SubmitTransactionRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_SubmitTransactionResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_SubmitTransactionResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualSelectedParentChainChangedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualSelectedParentChainChangedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualSelectedParentChainChangedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualSelectedParentChainChangedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_VirtualSelectedParentChainChangedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_VirtualSelectedParentChainChangedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetSubnetworkRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetSubnetworkRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetSubnetworkResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetSubnetworkResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetVirtualSelectedParentChainFromBlockRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetVirtualSelectedParentChainFromBlockRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetVirtualSelectedParentChainFromBlockResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetVirtualSelectedParentChainFromBlockResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlocksRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlocksRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlocksResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlocksResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockCountRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockCountRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockCountResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockCountResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockDagInfoRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockDagInfoRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBlockDagInfoResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBlockDagInfoResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_ResolveFinalityConflictRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_ResolveFinalityConflictRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_ResolveFinalityConflictResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_ResolveFinalityConflictResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyFinalityConflictsRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyFinalityConflictsRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyFinalityConflictsResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyFinalityConflictsResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_FinalityConflictNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_FinalityConflictNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_FinalityConflictResolvedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_FinalityConflictResolvedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntriesRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntriesRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntriesResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntriesResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_ShutDownRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_ShutDownRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_ShutDownResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_ShutDownResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetHeadersRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetHeadersRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetHeadersResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetHeadersResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyUtxosChangedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyUtxosChangedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyUtxosChangedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyUtxosChangedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_UtxosChangedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_UtxosChangedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetUtxosByAddressesRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetUtxosByAddressesRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetUtxosByAddressesResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetUtxosByAddressesResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetVirtualSelectedParentBlueScoreRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetVirtualSelectedParentBlueScoreRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetVirtualSelectedParentBlueScoreResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetVirtualSelectedParentBlueScoreResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BanRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BanRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_BanResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_BanResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_UnbanRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_UnbanRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_UnbanResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_UnbanResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetInfoRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetInfoRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetInfoResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetInfoResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_StopNotifyingUtxosChangedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_StopNotifyingUtxosChangedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_StopNotifyingUtxosChangedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_StopNotifyingUtxosChangedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyPruningPointUTXOSetOverrideRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyPruningPointUTXOSetOverrideRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyPruningPointUTXOSetOverrideResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyPruningPointUTXOSetOverrideResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_PruningPointUTXOSetOverrideNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_PruningPointUTXOSetOverrideNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_EstimateNetworkHashesPerSecondRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_EstimateNetworkHashesPerSecondRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_EstimateNetworkHashesPerSecondResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_EstimateNetworkHashesPerSecondResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualDaaScoreChangedRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualDaaScoreChangedRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyVirtualDaaScoreChangedResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyVirtualDaaScoreChangedResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_VirtualDaaScoreChangedNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_VirtualDaaScoreChangedNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBalanceByAddressRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBalanceByAddressRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBalanceByAddressResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBalanceByAddressResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBalancesByAddressesRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBalancesByAddressesRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetBalancesByAddressesResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetBalancesByAddressesResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyNewBlockTemplateRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyNewBlockTemplateRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NotifyNewBlockTemplateResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NotifyNewBlockTemplateResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_NewBlockTemplateNotification) isKaspadMessage_Payload() {}
+func (*KaspidMessage_NewBlockTemplateNotification) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntriesByAddressesRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntriesByAddressesRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetMempoolEntriesByAddressesResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetMempoolEntriesByAddressesResponse) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetCoinSupplyRequest) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetCoinSupplyRequest) isKaspidMessage_Payload() {}
 
-func (*KaspadMessage_GetCoinSupplyResponse) isKaspadMessage_Payload() {}
+func (*KaspidMessage_GetCoinSupplyResponse) isKaspidMessage_Payload() {}
 
 var File_messages_proto protoreflect.FileDescriptor
 
@@ -2804,7 +2804,7 @@ func file_messages_proto_rawDescGZIP() []byte {
 
 var file_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_messages_proto_goTypes = []interface{}{
-	(*KaspadMessage)(nil),                                              // 0: protowire.KaspadMessage
+	(*KaspidMessage)(nil),                                              // 0: protowire.KaspidMessage
 	(*AddressesMessage)(nil),                                           // 1: protowire.AddressesMessage
 	(*BlockMessage)(nil),                                               // 2: protowire.BlockMessage
 	(*TransactionMessage)(nil),                                         // 3: protowire.TransactionMessage
@@ -2936,140 +2936,140 @@ var file_messages_proto_goTypes = []interface{}{
 	(*GetCoinSupplyResponseMessage)(nil),                               // 129: protowire.GetCoinSupplyResponseMessage
 }
 var file_messages_proto_depIdxs = []int32{
-	1,   // 0: protowire.KaspadMessage.addresses:type_name -> protowire.AddressesMessage
-	2,   // 1: protowire.KaspadMessage.block:type_name -> protowire.BlockMessage
-	3,   // 2: protowire.KaspadMessage.transaction:type_name -> protowire.TransactionMessage
-	4,   // 3: protowire.KaspadMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
-	5,   // 4: protowire.KaspadMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
-	6,   // 5: protowire.KaspadMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
-	7,   // 6: protowire.KaspadMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
-	2,   // 7: protowire.KaspadMessage.ibdBlock:type_name -> protowire.BlockMessage
-	8,   // 8: protowire.KaspadMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
-	9,   // 9: protowire.KaspadMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
-	10,  // 10: protowire.KaspadMessage.ping:type_name -> protowire.PingMessage
-	11,  // 11: protowire.KaspadMessage.pong:type_name -> protowire.PongMessage
-	12,  // 12: protowire.KaspadMessage.verack:type_name -> protowire.VerackMessage
-	13,  // 13: protowire.KaspadMessage.version:type_name -> protowire.VersionMessage
-	14,  // 14: protowire.KaspadMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
-	15,  // 15: protowire.KaspadMessage.reject:type_name -> protowire.RejectMessage
-	16,  // 16: protowire.KaspadMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
-	17,  // 17: protowire.KaspadMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
-	18,  // 18: protowire.KaspadMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
-	19,  // 19: protowire.KaspadMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
-	20,  // 20: protowire.KaspadMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
-	21,  // 21: protowire.KaspadMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
-	22,  // 22: protowire.KaspadMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
-	23,  // 23: protowire.KaspadMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
-	24,  // 24: protowire.KaspadMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
-	25,  // 25: protowire.KaspadMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
-	26,  // 26: protowire.KaspadMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
-	27,  // 27: protowire.KaspadMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
-	28,  // 28: protowire.KaspadMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
-	29,  // 29: protowire.KaspadMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
-	30,  // 30: protowire.KaspadMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
-	31,  // 31: protowire.KaspadMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
-	32,  // 32: protowire.KaspadMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
-	33,  // 33: protowire.KaspadMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
-	34,  // 34: protowire.KaspadMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
-	35,  // 35: protowire.KaspadMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
-	36,  // 36: protowire.KaspadMessage.ready:type_name -> protowire.ReadyMessage
-	37,  // 37: protowire.KaspadMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
-	38,  // 38: protowire.KaspadMessage.trustedData:type_name -> protowire.TrustedDataMessage
-	39,  // 39: protowire.KaspadMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
-	40,  // 40: protowire.KaspadMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
-	41,  // 41: protowire.KaspadMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
-	42,  // 42: protowire.KaspadMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
-	43,  // 43: protowire.KaspadMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
-	44,  // 44: protowire.KaspadMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
-	45,  // 45: protowire.KaspadMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
-	46,  // 46: protowire.KaspadMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
-	47,  // 47: protowire.KaspadMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
-	48,  // 48: protowire.KaspadMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
-	49,  // 49: protowire.KaspadMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
-	50,  // 50: protowire.KaspadMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
-	51,  // 51: protowire.KaspadMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
-	52,  // 52: protowire.KaspadMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
-	53,  // 53: protowire.KaspadMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
-	54,  // 54: protowire.KaspadMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
-	55,  // 55: protowire.KaspadMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
-	56,  // 56: protowire.KaspadMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
-	57,  // 57: protowire.KaspadMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
-	58,  // 58: protowire.KaspadMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
-	59,  // 59: protowire.KaspadMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
-	60,  // 60: protowire.KaspadMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
-	61,  // 61: protowire.KaspadMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
-	62,  // 62: protowire.KaspadMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
-	63,  // 63: protowire.KaspadMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
-	64,  // 64: protowire.KaspadMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
-	65,  // 65: protowire.KaspadMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
-	66,  // 66: protowire.KaspadMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
-	67,  // 67: protowire.KaspadMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
-	68,  // 68: protowire.KaspadMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
-	69,  // 69: protowire.KaspadMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
-	70,  // 70: protowire.KaspadMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
-	71,  // 71: protowire.KaspadMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
-	72,  // 72: protowire.KaspadMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
-	73,  // 73: protowire.KaspadMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
-	74,  // 74: protowire.KaspadMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
-	75,  // 75: protowire.KaspadMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
-	76,  // 76: protowire.KaspadMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
-	77,  // 77: protowire.KaspadMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
-	78,  // 78: protowire.KaspadMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
-	79,  // 79: protowire.KaspadMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
-	80,  // 80: protowire.KaspadMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
-	81,  // 81: protowire.KaspadMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
-	82,  // 82: protowire.KaspadMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
-	83,  // 83: protowire.KaspadMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
-	84,  // 84: protowire.KaspadMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
-	85,  // 85: protowire.KaspadMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
-	86,  // 86: protowire.KaspadMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
-	87,  // 87: protowire.KaspadMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
-	88,  // 88: protowire.KaspadMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
-	89,  // 89: protowire.KaspadMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
-	90,  // 90: protowire.KaspadMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
-	91,  // 91: protowire.KaspadMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
-	92,  // 92: protowire.KaspadMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
-	93,  // 93: protowire.KaspadMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
-	94,  // 94: protowire.KaspadMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
-	95,  // 95: protowire.KaspadMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
-	96,  // 96: protowire.KaspadMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
-	97,  // 97: protowire.KaspadMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
-	98,  // 98: protowire.KaspadMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
-	99,  // 99: protowire.KaspadMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
-	100, // 100: protowire.KaspadMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
-	101, // 101: protowire.KaspadMessage.banRequest:type_name -> protowire.BanRequestMessage
-	102, // 102: protowire.KaspadMessage.banResponse:type_name -> protowire.BanResponseMessage
-	103, // 103: protowire.KaspadMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
-	104, // 104: protowire.KaspadMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
-	105, // 105: protowire.KaspadMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
-	106, // 106: protowire.KaspadMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
-	107, // 107: protowire.KaspadMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
-	108, // 108: protowire.KaspadMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
-	109, // 109: protowire.KaspadMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
-	110, // 110: protowire.KaspadMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
-	111, // 111: protowire.KaspadMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
-	112, // 112: protowire.KaspadMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
-	113, // 113: protowire.KaspadMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
-	114, // 114: protowire.KaspadMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
-	115, // 115: protowire.KaspadMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
-	116, // 116: protowire.KaspadMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
-	117, // 117: protowire.KaspadMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
-	118, // 118: protowire.KaspadMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
-	119, // 119: protowire.KaspadMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
-	120, // 120: protowire.KaspadMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
-	121, // 121: protowire.KaspadMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
-	122, // 122: protowire.KaspadMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
-	123, // 123: protowire.KaspadMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
-	124, // 124: protowire.KaspadMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
-	125, // 125: protowire.KaspadMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
-	126, // 126: protowire.KaspadMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
-	127, // 127: protowire.KaspadMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
-	128, // 128: protowire.KaspadMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
-	129, // 129: protowire.KaspadMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
-	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.KaspadMessage
-	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.KaspadMessage
-	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.KaspadMessage
-	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.KaspadMessage
+	1,   // 0: protowire.KaspidMessage.addresses:type_name -> protowire.AddressesMessage
+	2,   // 1: protowire.KaspidMessage.block:type_name -> protowire.BlockMessage
+	3,   // 2: protowire.KaspidMessage.transaction:type_name -> protowire.TransactionMessage
+	4,   // 3: protowire.KaspidMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
+	5,   // 4: protowire.KaspidMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
+	6,   // 5: protowire.KaspidMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
+	7,   // 6: protowire.KaspidMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
+	2,   // 7: protowire.KaspidMessage.ibdBlock:type_name -> protowire.BlockMessage
+	8,   // 8: protowire.KaspidMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
+	9,   // 9: protowire.KaspidMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
+	10,  // 10: protowire.KaspidMessage.ping:type_name -> protowire.PingMessage
+	11,  // 11: protowire.KaspidMessage.pong:type_name -> protowire.PongMessage
+	12,  // 12: protowire.KaspidMessage.verack:type_name -> protowire.VerackMessage
+	13,  // 13: protowire.KaspidMessage.version:type_name -> protowire.VersionMessage
+	14,  // 14: protowire.KaspidMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
+	15,  // 15: protowire.KaspidMessage.reject:type_name -> protowire.RejectMessage
+	16,  // 16: protowire.KaspidMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
+	17,  // 17: protowire.KaspidMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
+	18,  // 18: protowire.KaspidMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
+	19,  // 19: protowire.KaspidMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
+	20,  // 20: protowire.KaspidMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
+	21,  // 21: protowire.KaspidMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
+	22,  // 22: protowire.KaspidMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
+	23,  // 23: protowire.KaspidMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
+	24,  // 24: protowire.KaspidMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
+	25,  // 25: protowire.KaspidMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
+	26,  // 26: protowire.KaspidMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
+	27,  // 27: protowire.KaspidMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
+	28,  // 28: protowire.KaspidMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
+	29,  // 29: protowire.KaspidMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
+	30,  // 30: protowire.KaspidMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
+	31,  // 31: protowire.KaspidMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
+	32,  // 32: protowire.KaspidMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
+	33,  // 33: protowire.KaspidMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
+	34,  // 34: protowire.KaspidMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
+	35,  // 35: protowire.KaspidMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
+	36,  // 36: protowire.KaspidMessage.ready:type_name -> protowire.ReadyMessage
+	37,  // 37: protowire.KaspidMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
+	38,  // 38: protowire.KaspidMessage.trustedData:type_name -> protowire.TrustedDataMessage
+	39,  // 39: protowire.KaspidMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
+	40,  // 40: protowire.KaspidMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
+	41,  // 41: protowire.KaspidMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
+	42,  // 42: protowire.KaspidMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
+	43,  // 43: protowire.KaspidMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
+	44,  // 44: protowire.KaspidMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
+	45,  // 45: protowire.KaspidMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
+	46,  // 46: protowire.KaspidMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
+	47,  // 47: protowire.KaspidMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
+	48,  // 48: protowire.KaspidMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
+	49,  // 49: protowire.KaspidMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
+	50,  // 50: protowire.KaspidMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
+	51,  // 51: protowire.KaspidMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
+	52,  // 52: protowire.KaspidMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
+	53,  // 53: protowire.KaspidMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
+	54,  // 54: protowire.KaspidMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
+	55,  // 55: protowire.KaspidMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
+	56,  // 56: protowire.KaspidMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
+	57,  // 57: protowire.KaspidMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
+	58,  // 58: protowire.KaspidMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
+	59,  // 59: protowire.KaspidMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
+	60,  // 60: protowire.KaspidMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
+	61,  // 61: protowire.KaspidMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
+	62,  // 62: protowire.KaspidMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
+	63,  // 63: protowire.KaspidMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
+	64,  // 64: protowire.KaspidMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
+	65,  // 65: protowire.KaspidMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
+	66,  // 66: protowire.KaspidMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
+	67,  // 67: protowire.KaspidMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
+	68,  // 68: protowire.KaspidMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
+	69,  // 69: protowire.KaspidMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
+	70,  // 70: protowire.KaspidMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
+	71,  // 71: protowire.KaspidMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
+	72,  // 72: protowire.KaspidMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
+	73,  // 73: protowire.KaspidMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
+	74,  // 74: protowire.KaspidMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
+	75,  // 75: protowire.KaspidMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
+	76,  // 76: protowire.KaspidMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
+	77,  // 77: protowire.KaspidMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
+	78,  // 78: protowire.KaspidMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
+	79,  // 79: protowire.KaspidMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
+	80,  // 80: protowire.KaspidMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
+	81,  // 81: protowire.KaspidMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
+	82,  // 82: protowire.KaspidMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
+	83,  // 83: protowire.KaspidMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
+	84,  // 84: protowire.KaspidMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
+	85,  // 85: protowire.KaspidMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
+	86,  // 86: protowire.KaspidMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
+	87,  // 87: protowire.KaspidMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
+	88,  // 88: protowire.KaspidMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
+	89,  // 89: protowire.KaspidMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
+	90,  // 90: protowire.KaspidMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
+	91,  // 91: protowire.KaspidMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
+	92,  // 92: protowire.KaspidMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
+	93,  // 93: protowire.KaspidMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
+	94,  // 94: protowire.KaspidMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
+	95,  // 95: protowire.KaspidMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
+	96,  // 96: protowire.KaspidMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
+	97,  // 97: protowire.KaspidMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
+	98,  // 98: protowire.KaspidMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
+	99,  // 99: protowire.KaspidMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
+	100, // 100: protowire.KaspidMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
+	101, // 101: protowire.KaspidMessage.banRequest:type_name -> protowire.BanRequestMessage
+	102, // 102: protowire.KaspidMessage.banResponse:type_name -> protowire.BanResponseMessage
+	103, // 103: protowire.KaspidMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
+	104, // 104: protowire.KaspidMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
+	105, // 105: protowire.KaspidMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
+	106, // 106: protowire.KaspidMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
+	107, // 107: protowire.KaspidMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
+	108, // 108: protowire.KaspidMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
+	109, // 109: protowire.KaspidMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
+	110, // 110: protowire.KaspidMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
+	111, // 111: protowire.KaspidMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
+	112, // 112: protowire.KaspidMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
+	113, // 113: protowire.KaspidMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
+	114, // 114: protowire.KaspidMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
+	115, // 115: protowire.KaspidMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
+	116, // 116: protowire.KaspidMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
+	117, // 117: protowire.KaspidMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
+	118, // 118: protowire.KaspidMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
+	119, // 119: protowire.KaspidMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
+	120, // 120: protowire.KaspidMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
+	121, // 121: protowire.KaspidMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
+	122, // 122: protowire.KaspidMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
+	123, // 123: protowire.KaspidMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
+	124, // 124: protowire.KaspidMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
+	125, // 125: protowire.KaspidMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
+	126, // 126: protowire.KaspidMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
+	127, // 127: protowire.KaspidMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
+	128, // 128: protowire.KaspidMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
+	129, // 129: protowire.KaspidMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
+	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.KaspidMessage
+	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.KaspidMessage
+	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.KaspidMessage
+	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.KaspidMessage
 	132, // [132:134] is the sub-list for method output_type
 	130, // [130:132] is the sub-list for method input_type
 	130, // [130:130] is the sub-list for extension type_name
@@ -3086,7 +3086,7 @@ func file_messages_proto_init() {
 	file_rpc_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_messages_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*KaspadMessage); i {
+			switch v := v.(*KaspidMessage); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3099,136 +3099,136 @@ func file_messages_proto_init() {
 		}
 	}
 	file_messages_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*KaspadMessage_Addresses)(nil),
-		(*KaspadMessage_Block)(nil),
-		(*KaspadMessage_Transaction)(nil),
-		(*KaspadMessage_BlockLocator)(nil),
-		(*KaspadMessage_RequestAddresses)(nil),
-		(*KaspadMessage_RequestRelayBlocks)(nil),
-		(*KaspadMessage_RequestTransactions)(nil),
-		(*KaspadMessage_IbdBlock)(nil),
-		(*KaspadMessage_InvRelayBlock)(nil),
-		(*KaspadMessage_InvTransactions)(nil),
-		(*KaspadMessage_Ping)(nil),
-		(*KaspadMessage_Pong)(nil),
-		(*KaspadMessage_Verack)(nil),
-		(*KaspadMessage_Version)(nil),
-		(*KaspadMessage_TransactionNotFound)(nil),
-		(*KaspadMessage_Reject)(nil),
-		(*KaspadMessage_PruningPointUtxoSetChunk)(nil),
-		(*KaspadMessage_RequestIBDBlocks)(nil),
-		(*KaspadMessage_UnexpectedPruningPoint)(nil),
-		(*KaspadMessage_IbdBlockLocator)(nil),
-		(*KaspadMessage_IbdBlockLocatorHighestHash)(nil),
-		(*KaspadMessage_RequestNextPruningPointUtxoSetChunk)(nil),
-		(*KaspadMessage_DonePruningPointUtxoSetChunks)(nil),
-		(*KaspadMessage_IbdBlockLocatorHighestHashNotFound)(nil),
-		(*KaspadMessage_BlockWithTrustedData)(nil),
-		(*KaspadMessage_DoneBlocksWithTrustedData)(nil),
-		(*KaspadMessage_RequestPruningPointAndItsAnticone)(nil),
-		(*KaspadMessage_BlockHeaders)(nil),
-		(*KaspadMessage_RequestNextHeaders)(nil),
-		(*KaspadMessage_DoneHeaders)(nil),
-		(*KaspadMessage_RequestPruningPointUTXOSet)(nil),
-		(*KaspadMessage_RequestHeaders)(nil),
-		(*KaspadMessage_RequestBlockLocator)(nil),
-		(*KaspadMessage_PruningPoints)(nil),
-		(*KaspadMessage_RequestPruningPointProof)(nil),
-		(*KaspadMessage_PruningPointProof)(nil),
-		(*KaspadMessage_Ready)(nil),
-		(*KaspadMessage_BlockWithTrustedDataV4)(nil),
-		(*KaspadMessage_TrustedData)(nil),
-		(*KaspadMessage_RequestIBDChainBlockLocator)(nil),
-		(*KaspadMessage_IbdChainBlockLocator)(nil),
-		(*KaspadMessage_RequestAnticone)(nil),
-		(*KaspadMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
-		(*KaspadMessage_GetCurrentNetworkRequest)(nil),
-		(*KaspadMessage_GetCurrentNetworkResponse)(nil),
-		(*KaspadMessage_SubmitBlockRequest)(nil),
-		(*KaspadMessage_SubmitBlockResponse)(nil),
-		(*KaspadMessage_GetBlockTemplateRequest)(nil),
-		(*KaspadMessage_GetBlockTemplateResponse)(nil),
-		(*KaspadMessage_NotifyBlockAddedRequest)(nil),
-		(*KaspadMessage_NotifyBlockAddedResponse)(nil),
-		(*KaspadMessage_BlockAddedNotification)(nil),
-		(*KaspadMessage_GetPeerAddressesRequest)(nil),
-		(*KaspadMessage_GetPeerAddressesResponse)(nil),
-		(*KaspadMessage_GetSelectedTipHashRequest)(nil),
-		(*KaspadMessage_GetSelectedTipHashResponse)(nil),
-		(*KaspadMessage_GetMempoolEntryRequest)(nil),
-		(*KaspadMessage_GetMempoolEntryResponse)(nil),
-		(*KaspadMessage_GetConnectedPeerInfoRequest)(nil),
-		(*KaspadMessage_GetConnectedPeerInfoResponse)(nil),
-		(*KaspadMessage_AddPeerRequest)(nil),
-		(*KaspadMessage_AddPeerResponse)(nil),
-		(*KaspadMessage_SubmitTransactionRequest)(nil),
-		(*KaspadMessage_SubmitTransactionResponse)(nil),
-		(*KaspadMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
-		(*KaspadMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
-		(*KaspadMessage_VirtualSelectedParentChainChangedNotification)(nil),
-		(*KaspadMessage_GetBlockRequest)(nil),
-		(*KaspadMessage_GetBlockResponse)(nil),
-		(*KaspadMessage_GetSubnetworkRequest)(nil),
-		(*KaspadMessage_GetSubnetworkResponse)(nil),
-		(*KaspadMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
-		(*KaspadMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
-		(*KaspadMessage_GetBlocksRequest)(nil),
-		(*KaspadMessage_GetBlocksResponse)(nil),
-		(*KaspadMessage_GetBlockCountRequest)(nil),
-		(*KaspadMessage_GetBlockCountResponse)(nil),
-		(*KaspadMessage_GetBlockDagInfoRequest)(nil),
-		(*KaspadMessage_GetBlockDagInfoResponse)(nil),
-		(*KaspadMessage_ResolveFinalityConflictRequest)(nil),
-		(*KaspadMessage_ResolveFinalityConflictResponse)(nil),
-		(*KaspadMessage_NotifyFinalityConflictsRequest)(nil),
-		(*KaspadMessage_NotifyFinalityConflictsResponse)(nil),
-		(*KaspadMessage_FinalityConflictNotification)(nil),
-		(*KaspadMessage_FinalityConflictResolvedNotification)(nil),
-		(*KaspadMessage_GetMempoolEntriesRequest)(nil),
-		(*KaspadMessage_GetMempoolEntriesResponse)(nil),
-		(*KaspadMessage_ShutDownRequest)(nil),
-		(*KaspadMessage_ShutDownResponse)(nil),
-		(*KaspadMessage_GetHeadersRequest)(nil),
-		(*KaspadMessage_GetHeadersResponse)(nil),
-		(*KaspadMessage_NotifyUtxosChangedRequest)(nil),
-		(*KaspadMessage_NotifyUtxosChangedResponse)(nil),
-		(*KaspadMessage_UtxosChangedNotification)(nil),
-		(*KaspadMessage_GetUtxosByAddressesRequest)(nil),
-		(*KaspadMessage_GetUtxosByAddressesResponse)(nil),
-		(*KaspadMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
-		(*KaspadMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
-		(*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
-		(*KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
-		(*KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
-		(*KaspadMessage_BanRequest)(nil),
-		(*KaspadMessage_BanResponse)(nil),
-		(*KaspadMessage_UnbanRequest)(nil),
-		(*KaspadMessage_UnbanResponse)(nil),
-		(*KaspadMessage_GetInfoRequest)(nil),
-		(*KaspadMessage_GetInfoResponse)(nil),
-		(*KaspadMessage_StopNotifyingUtxosChangedRequest)(nil),
-		(*KaspadMessage_StopNotifyingUtxosChangedResponse)(nil),
-		(*KaspadMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
-		(*KaspadMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
-		(*KaspadMessage_PruningPointUTXOSetOverrideNotification)(nil),
-		(*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
-		(*KaspadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
-		(*KaspadMessage_EstimateNetworkHashesPerSecondRequest)(nil),
-		(*KaspadMessage_EstimateNetworkHashesPerSecondResponse)(nil),
-		(*KaspadMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
-		(*KaspadMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
-		(*KaspadMessage_VirtualDaaScoreChangedNotification)(nil),
-		(*KaspadMessage_GetBalanceByAddressRequest)(nil),
-		(*KaspadMessage_GetBalanceByAddressResponse)(nil),
-		(*KaspadMessage_GetBalancesByAddressesRequest)(nil),
-		(*KaspadMessage_GetBalancesByAddressesResponse)(nil),
-		(*KaspadMessage_NotifyNewBlockTemplateRequest)(nil),
-		(*KaspadMessage_NotifyNewBlockTemplateResponse)(nil),
-		(*KaspadMessage_NewBlockTemplateNotification)(nil),
-		(*KaspadMessage_GetMempoolEntriesByAddressesRequest)(nil),
-		(*KaspadMessage_GetMempoolEntriesByAddressesResponse)(nil),
-		(*KaspadMessage_GetCoinSupplyRequest)(nil),
-		(*KaspadMessage_GetCoinSupplyResponse)(nil),
+		(*KaspidMessage_Addresses)(nil),
+		(*KaspidMessage_Block)(nil),
+		(*KaspidMessage_Transaction)(nil),
+		(*KaspidMessage_BlockLocator)(nil),
+		(*KaspidMessage_RequestAddresses)(nil),
+		(*KaspidMessage_RequestRelayBlocks)(nil),
+		(*KaspidMessage_RequestTransactions)(nil),
+		(*KaspidMessage_IbdBlock)(nil),
+		(*KaspidMessage_InvRelayBlock)(nil),
+		(*KaspidMessage_InvTransactions)(nil),
+		(*KaspidMessage_Ping)(nil),
+		(*KaspidMessage_Pong)(nil),
+		(*KaspidMessage_Verack)(nil),
+		(*KaspidMessage_Version)(nil),
+		(*KaspidMessage_TransactionNotFound)(nil),
+		(*KaspidMessage_Reject)(nil),
+		(*KaspidMessage_PruningPointUtxoSetChunk)(nil),
+		(*KaspidMessage_RequestIBDBlocks)(nil),
+		(*KaspidMessage_UnexpectedPruningPoint)(nil),
+		(*KaspidMessage_IbdBlockLocator)(nil),
+		(*KaspidMessage_IbdBlockLocatorHighestHash)(nil),
+		(*KaspidMessage_RequestNextPruningPointUtxoSetChunk)(nil),
+		(*KaspidMessage_DonePruningPointUtxoSetChunks)(nil),
+		(*KaspidMessage_IbdBlockLocatorHighestHashNotFound)(nil),
+		(*KaspidMessage_BlockWithTrustedData)(nil),
+		(*KaspidMessage_DoneBlocksWithTrustedData)(nil),
+		(*KaspidMessage_RequestPruningPointAndItsAnticone)(nil),
+		(*KaspidMessage_BlockHeaders)(nil),
+		(*KaspidMessage_RequestNextHeaders)(nil),
+		(*KaspidMessage_DoneHeaders)(nil),
+		(*KaspidMessage_RequestPruningPointUTXOSet)(nil),
+		(*KaspidMessage_RequestHeaders)(nil),
+		(*KaspidMessage_RequestBlockLocator)(nil),
+		(*KaspidMessage_PruningPoints)(nil),
+		(*KaspidMessage_RequestPruningPointProof)(nil),
+		(*KaspidMessage_PruningPointProof)(nil),
+		(*KaspidMessage_Ready)(nil),
+		(*KaspidMessage_BlockWithTrustedDataV4)(nil),
+		(*KaspidMessage_TrustedData)(nil),
+		(*KaspidMessage_RequestIBDChainBlockLocator)(nil),
+		(*KaspidMessage_IbdChainBlockLocator)(nil),
+		(*KaspidMessage_RequestAnticone)(nil),
+		(*KaspidMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
+		(*KaspidMessage_GetCurrentNetworkRequest)(nil),
+		(*KaspidMessage_GetCurrentNetworkResponse)(nil),
+		(*KaspidMessage_SubmitBlockRequest)(nil),
+		(*KaspidMessage_SubmitBlockResponse)(nil),
+		(*KaspidMessage_GetBlockTemplateRequest)(nil),
+		(*KaspidMessage_GetBlockTemplateResponse)(nil),
+		(*KaspidMessage_NotifyBlockAddedRequest)(nil),
+		(*KaspidMessage_NotifyBlockAddedResponse)(nil),
+		(*KaspidMessage_BlockAddedNotification)(nil),
+		(*KaspidMessage_GetPeerAddressesRequest)(nil),
+		(*KaspidMessage_GetPeerAddressesResponse)(nil),
+		(*KaspidMessage_GetSelectedTipHashRequest)(nil),
+		(*KaspidMessage_GetSelectedTipHashResponse)(nil),
+		(*KaspidMessage_GetMempoolEntryRequest)(nil),
+		(*KaspidMessage_GetMempoolEntryResponse)(nil),
+		(*KaspidMessage_GetConnectedPeerInfoRequest)(nil),
+		(*KaspidMessage_GetConnectedPeerInfoResponse)(nil),
+		(*KaspidMessage_AddPeerRequest)(nil),
+		(*KaspidMessage_AddPeerResponse)(nil),
+		(*KaspidMessage_SubmitTransactionRequest)(nil),
+		(*KaspidMessage_SubmitTransactionResponse)(nil),
+		(*KaspidMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
+		(*KaspidMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
+		(*KaspidMessage_VirtualSelectedParentChainChangedNotification)(nil),
+		(*KaspidMessage_GetBlockRequest)(nil),
+		(*KaspidMessage_GetBlockResponse)(nil),
+		(*KaspidMessage_GetSubnetworkRequest)(nil),
+		(*KaspidMessage_GetSubnetworkResponse)(nil),
+		(*KaspidMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
+		(*KaspidMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
+		(*KaspidMessage_GetBlocksRequest)(nil),
+		(*KaspidMessage_GetBlocksResponse)(nil),
+		(*KaspidMessage_GetBlockCountRequest)(nil),
+		(*KaspidMessage_GetBlockCountResponse)(nil),
+		(*KaspidMessage_GetBlockDagInfoRequest)(nil),
+		(*KaspidMessage_GetBlockDagInfoResponse)(nil),
+		(*KaspidMessage_ResolveFinalityConflictRequest)(nil),
+		(*KaspidMessage_ResolveFinalityConflictResponse)(nil),
+		(*KaspidMessage_NotifyFinalityConflictsRequest)(nil),
+		(*KaspidMessage_NotifyFinalityConflictsResponse)(nil),
+		(*KaspidMessage_FinalityConflictNotification)(nil),
+		(*KaspidMessage_FinalityConflictResolvedNotification)(nil),
+		(*KaspidMessage_GetMempoolEntriesRequest)(nil),
+		(*KaspidMessage_GetMempoolEntriesResponse)(nil),
+		(*KaspidMessage_ShutDownRequest)(nil),
+		(*KaspidMessage_ShutDownResponse)(nil),
+		(*KaspidMessage_GetHeadersRequest)(nil),
+		(*KaspidMessage_GetHeadersResponse)(nil),
+		(*KaspidMessage_NotifyUtxosChangedRequest)(nil),
+		(*KaspidMessage_NotifyUtxosChangedResponse)(nil),
+		(*KaspidMessage_UtxosChangedNotification)(nil),
+		(*KaspidMessage_GetUtxosByAddressesRequest)(nil),
+		(*KaspidMessage_GetUtxosByAddressesResponse)(nil),
+		(*KaspidMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
+		(*KaspidMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
+		(*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
+		(*KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
+		(*KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
+		(*KaspidMessage_BanRequest)(nil),
+		(*KaspidMessage_BanResponse)(nil),
+		(*KaspidMessage_UnbanRequest)(nil),
+		(*KaspidMessage_UnbanResponse)(nil),
+		(*KaspidMessage_GetInfoRequest)(nil),
+		(*KaspidMessage_GetInfoResponse)(nil),
+		(*KaspidMessage_StopNotifyingUtxosChangedRequest)(nil),
+		(*KaspidMessage_StopNotifyingUtxosChangedResponse)(nil),
+		(*KaspidMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
+		(*KaspidMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
+		(*KaspidMessage_PruningPointUTXOSetOverrideNotification)(nil),
+		(*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
+		(*KaspidMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
+		(*KaspidMessage_EstimateNetworkHashesPerSecondRequest)(nil),
+		(*KaspidMessage_EstimateNetworkHashesPerSecondResponse)(nil),
+		(*KaspidMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
+		(*KaspidMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
+		(*KaspidMessage_VirtualDaaScoreChangedNotification)(nil),
+		(*KaspidMessage_GetBalanceByAddressRequest)(nil),
+		(*KaspidMessage_GetBalanceByAddressResponse)(nil),
+		(*KaspidMessage_GetBalancesByAddressesRequest)(nil),
+		(*KaspidMessage_GetBalancesByAddressesResponse)(nil),
+		(*KaspidMessage_NotifyNewBlockTemplateRequest)(nil),
+		(*KaspidMessage_NotifyNewBlockTemplateResponse)(nil),
+		(*KaspidMessage_NewBlockTemplateNotification)(nil),
+		(*KaspidMessage_GetMempoolEntriesByAddressesRequest)(nil),
+		(*KaspidMessage_GetMempoolEntriesByAddressesResponse)(nil),
+		(*KaspidMessage_GetCoinSupplyRequest)(nil),
+		(*KaspidMessage_GetCoinSupplyResponse)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

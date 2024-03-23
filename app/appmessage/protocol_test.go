@@ -33,7 +33,7 @@ func TestServiceFlagStringer(t *testing.T) {
 	}
 }
 
-// TestKaspaNetStringer tests the stringized output for kaspa net types.
+// TestKaspaNetStringer tests the stringized output for kaspi net types.
 func TestKaspaNetStringer(t *testing.T) {
 	tests := []struct {
 		in   KaspaNet

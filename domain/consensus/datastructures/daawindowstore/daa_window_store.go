@@ -3,12 +3,12 @@ package daawindowstore
 import (
 	"encoding/binary"
 	"github.com/golang/protobuf/proto"
-	"github.com/kaspanet/kaspad/domain/consensus/database/serialization"
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/lrucachehashpairtoblockghostdagdatahashpair"
-	"github.com/kaspanet/kaspad/infrastructure/db/database"
-	"github.com/kaspanet/kaspad/util/staging"
+	"github.com/kaspikr/kaspid/domain/consensus/database/serialization"
+	"github.com/kaspikr/kaspid/domain/consensus/model"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/lrucachehashpairtoblockghostdagdatahashpair"
+	"github.com/kaspikr/kaspid/infrastructure/db/database"
+	"github.com/kaspikr/kaspid/util/staging"
 	"github.com/pkg/errors"
 )
 

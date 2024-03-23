@@ -3,15 +3,15 @@ package mempool
 import (
 	"sync"
 
-	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/kaspikr/kaspid/domain/consensus/ruleerrors"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/consensushashing"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 
-	"github.com/kaspanet/kaspad/domain/consensusreference"
+	"github.com/kaspikr/kaspid/domain/consensusreference"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	miningmanagermodel "github.com/kaspanet/kaspad/domain/miningmanager/model"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	miningmanagermodel "github.com/kaspikr/kaspid/domain/miningmanager/model"
 )
 
 type mempool struct {

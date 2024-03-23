@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
-	"github.com/kaspanet/kaspad/infrastructure/db/database/ldb"
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/stability-tests/common/mine"
+	"github.com/kaspikr/kaspid/domain/consensus"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/consensushashing"
+	"github.com/kaspikr/kaspid/infrastructure/db/database/ldb"
+	"github.com/kaspikr/kaspid/stability-tests/common"
+	"github.com/kaspikr/kaspid/stability-tests/common/mine"
 	"github.com/pkg/errors"
 )
 

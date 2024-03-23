@@ -1,10 +1,10 @@
 package consensusstatemanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
-	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspikr/kaspid/domain/consensus/model"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/utxo"
+	"github.com/kaspikr/kaspid/infrastructure/logger"
 )
 
 // AddBlock submits the given block to be added to the

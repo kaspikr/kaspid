@@ -1,18 +1,18 @@
 package blockvalidator_test
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model/testapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/testapi"
 	"reflect"
 	"runtime"
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/blockheader"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
-	"github.com/kaspanet/kaspad/util/mstime"
+	"github.com/kaspikr/kaspid/domain/consensus"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/ruleerrors"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/blockheader"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/constants"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/testutils"
+	"github.com/kaspikr/kaspid/util/mstime"
 	"github.com/pkg/errors"
 )
 

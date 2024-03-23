@@ -3,11 +3,11 @@ package main
 import (
 	"time"
 
-	"github.com/kaspanet/go-secp256k1"
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/kaspikr/go-secp256k1"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	"github.com/kaspikr/kaspid/stability-tests/common"
+	"github.com/kaspikr/kaspid/stability-tests/common/rpc"
+	"github.com/kaspikr/kaspid/util"
 	"github.com/pkg/errors"
 )
 
@@ -32,7 +32,7 @@ func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
 		err = mineBlock(syncerRPCClient.Address(), miningAddr)
 		if err != nil {
 			// Ignore error and instead check that the block count changed correctly.
-			// TODO: Fix the race condition in kaspaminer so it won't panic (proper shutdown handler)
+			// TODO: Fix the race condition in kaspiminer so it won't panic (proper shutdown handler)
 			log.Warnf("mineBlock returned an err: %s", err)
 		}
 
@@ -129,8 +129,8 @@ func areTipsAreEqual(resultA, resultB *appmessage.GetBlockDAGInfoResponseMessage
 }
 
 func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
-	kaspaMinerCmd, err := common.StartCmd("MINER",
-		"kaspaminer",
+	kaspiMinerCmd, err := common.StartCmd("MINER",
+		"kaspiminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", syncerRPCAddress,
 		"--mine-when-not-synced",
@@ -140,5 +140,5 @@ func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
 	if err != nil {
 		return err
 	}
-	return errors.Wrapf(kaspaMinerCmd.Wait(), "error with command '%s'", kaspaMinerCmd)
+	return errors.Wrapf(kaspiMinerCmd.Wait(), "error with command '%s'", kaspiMinerCmd)
 }

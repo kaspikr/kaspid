@@ -4,13 +4,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
-	mathUtil "github.com/kaspanet/kaspad/util/math"
-	"github.com/kaspanet/kaspad/util/mstime"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter/id"
+	mathUtil "github.com/kaspikr/kaspid/util/math"
+	"github.com/kaspikr/kaspid/util/mstime"
 )
 
 // Peer holds data about a peer.

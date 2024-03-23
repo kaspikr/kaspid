@@ -4,14 +4,14 @@ The full node reference implementation was [rewritten in Rust](https://github.co
 
 PLEASE NOTE: Any pull requests or issues that will be opened in this repository will be closed without treatment, except for issues or pull requests related to the kaspawallet, which remains maintained. In any other case, please use the [Rust implementation](https://github.com/kaspanet/rusty-kaspa) instead.
 
-# Kaspad
+# Kaspid
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspanet/kaspad)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspikr/kaspid)
 
-Kaspad was the reference full node Kaspa implementation written in Go (golang).
+Kaspid was the reference full node Kaspa implementation written in Go (golang).
 
-## What is kaspa
+## What is kaspi
 
 Kaspa is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
 
@@ -32,25 +32,25 @@ Go 1.18 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install kaspad including all dependencies:
+- Run the following commands to obtain and install kaspid including all dependencies:
 
 ```bash
-$ git clone https://github.com/kaspanet/kaspad
-$ cd kaspad
+$ git clone https://github.com/kaspikr/kaspid
+$ cd kaspid
 $ go install . ./cmd/...
 ```
 
-- Kaspad (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
+- Kaspid (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
   not already add the bin directory to your system path during Go installation,
   you are encouraged to do so now.
 
 ## Getting Started
 
-Kaspad has several configuration options available to tweak how it runs, but all
+Kaspid has several configuration options available to tweak how it runs, but all
 of the basic operations work with zero configuration.
 
 ```bash
-$ kaspad
+$ kaspid
 ```
 
 ## Discord
@@ -59,15 +59,15 @@ Join our discord server using the following link: https://discord.gg/YNYnNN5Pf2
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/kaspanet/kaspad/issues)
+The [integrated github issue tracker](https://github.com/kaspikr/kaspid/issues)
 is used for this project.
 
-Issue priorities may be seen at https://github.com/orgs/kaspanet/projects/4
+Issue priorities may be seen at https://github.com/orgs/kaspikr/projects/4
 
 ## Documentation
 
-The [documentation](https://github.com/kaspanet/docs) is a work-in-progress
+The [documentation](https://github.com/kaspikr/docs) is a work-in-progress
 
 ## License
 
-Kaspad is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).
+Kaspid is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).

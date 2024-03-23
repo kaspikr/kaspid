@@ -6,18 +6,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kaspanet/kaspad/app/protocol/flowcontext"
+	"github.com/kaspikr/kaspid/app/protocol/flowcontext"
 
-	"github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/utxo"
 
-	"github.com/kaspanet/go-secp256k1"
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionhelper"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/kaspikr/go-secp256k1"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/consensushashing"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/constants"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/transactionhelper"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/txscript"
+	"github.com/kaspikr/kaspid/util"
 )
 
 func TestTxRelay(t *testing.T) {

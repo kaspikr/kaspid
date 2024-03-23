@@ -1,28 +1,28 @@
 package miningmanager_test
 
 import (
-	"github.com/kaspanet/kaspad/cmd/kaspawallet/libkaspawallet"
-	"github.com/kaspanet/kaspad/domain/consensusreference"
-	"github.com/kaspanet/kaspad/domain/miningmanager/model"
-	"github.com/kaspanet/kaspad/util"
-	"github.com/kaspanet/kaspad/version"
+	"github.com/kaspikr/kaspid/cmd/kaspiwallet/libkaspiwallet"
+	"github.com/kaspikr/kaspid/domain/consensusreference"
+	"github.com/kaspikr/kaspid/domain/miningmanager/model"
+	"github.com/kaspikr/kaspid/util"
+	"github.com/kaspikr/kaspid/version"
 	"reflect"
 	"strings"
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/miningmanager/mempool"
+	"github.com/kaspikr/kaspid/domain/miningmanager/mempool"
 
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/model/testapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionhelper"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
-	"github.com/kaspanet/kaspad/domain/miningmanager"
+	"github.com/kaspikr/kaspid/domain/consensus"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/testapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/consensushashing"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/constants"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/subnetworks"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/testutils"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/transactionhelper"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/txscript"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/utxo"
+	"github.com/kaspikr/kaspid/domain/miningmanager"
 	"github.com/pkg/errors"
 )
 
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libkaspawallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libkaspiwallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}

@@ -2,18 +2,18 @@ package pruningmanager_test
 
 import (
 	"encoding/json"
-	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspikr/kaspid/infrastructure/db/database"
 	"os"
 	"path/filepath"
 	"testing"
 	"time"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspikr/kaspid/domain/consensus/model"
 
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
-	"github.com/kaspanet/kaspad/domain/dagconfig"
+	"github.com/kaspikr/kaspid/domain/consensus"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/testutils"
+	"github.com/kaspikr/kaspid/domain/dagconfig"
 )
 
 type jsonBlock struct {

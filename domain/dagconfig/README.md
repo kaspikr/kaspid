@@ -2,11 +2,11 @@ dagconfig
 ========
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspanet/kaspad/dagconfig)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspikr/kaspid/dagconfig)
 
 Package dagconfig defines DAG configuration parameters for the standard
-Kaspad networks and provides the ability for callers to define their own custom
-Kaspad networks.
+Kaspid networks and provides the ability for callers to define their own custom
+Kaspid networks.
 
 ## Sample Use
 
@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kaspanet/kaspad/util"
-	"github.com/kaspanet/kaspad/domain/dagconfig"
+	"github.com/kaspikr/kaspid/util"
+	"github.com/kaspikr/kaspid/domain/dagconfig"
 )
 
 var testnet = flag.Bool("testnet", false, "operate on the testnet Kaspa network")

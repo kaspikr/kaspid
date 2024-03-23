@@ -1,7 +1,7 @@
 package txscript
 
 import (
-	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspikr/kaspid/infrastructure/logger"
 	"os"
 	"testing"
 )

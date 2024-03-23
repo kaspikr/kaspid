@@ -11,13 +11,13 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/constants"
 
-	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionid"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/subnetworks"
+	"github.com/kaspikr/kaspid/domain/consensus/utils/transactionid"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
 )
 
 // TestTx tests the MsgTx API.

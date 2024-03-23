@@ -1,22 +1,22 @@
 package handshake
 
 import (
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/app/protocol/common"
-	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
-	"github.com/kaspanet/kaspad/version"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	"github.com/kaspikr/kaspid/app/protocol/common"
+	peerpkg "github.com/kaspikr/kaspid/app/protocol/peer"
+	"github.com/kaspikr/kaspid/infrastructure/logger"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter/router"
+	"github.com/kaspikr/kaspid/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other kaspa peers.
-	userAgentName = "kaspad"
+	// ourselves to other kaspi peers.
+	userAgentName = "kaspid"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other kaspa peers.
+	// identify ourselves to other kaspi peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by

@@ -1,10 +1,10 @@
 package miningmanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensusreference"
-	"github.com/kaspanet/kaspad/domain/dagconfig"
-	"github.com/kaspanet/kaspad/domain/miningmanager/blocktemplatebuilder"
-	mempoolpkg "github.com/kaspanet/kaspad/domain/miningmanager/mempool"
+	"github.com/kaspikr/kaspid/domain/consensusreference"
+	"github.com/kaspikr/kaspid/domain/dagconfig"
+	"github.com/kaspikr/kaspid/domain/miningmanager/blocktemplatebuilder"
+	mempoolpkg "github.com/kaspikr/kaspid/domain/miningmanager/mempool"
 	"sync"
 	"time"
 )

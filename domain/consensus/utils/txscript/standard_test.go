@@ -6,12 +6,12 @@ package txscript
 
 import (
 	"bytes"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
 	"reflect"
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/dagconfig"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/kaspikr/kaspid/domain/dagconfig"
+	"github.com/kaspikr/kaspid/util"
 )
 
 // mustParseShortForm parses the passed short form script and returns the

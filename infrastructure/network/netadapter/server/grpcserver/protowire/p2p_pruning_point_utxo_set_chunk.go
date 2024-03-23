@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspikr/kaspid/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KaspadMessage_PruningPointUtxoSetChunk) toAppMessage() (appmessage.Message, error) {
+func (x *KaspidMessage_PruningPointUtxoSetChunk) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KaspadMessage_PruningPointUtxoSetChunk is nil")
+		return nil, errors.Wrapf(errorNil, "KaspidMessage_PruningPointUtxoSetChunk is nil")
 	}
 	outpointAndUTXOEntryPairs := make([]*appmessage.OutpointAndUTXOEntryPair, len(x.PruningPointUtxoSetChunk.OutpointAndUtxoEntryPairs))
 	for i, outpointAndUTXOEntryPair := range x.PruningPointUtxoSetChunk.OutpointAndUtxoEntryPairs {
@@ -40,7 +40,7 @@ func (x *OutpointAndUtxoEntryPair) toAppMessage() (*appmessage.OutpointAndUTXOEn
 	}, nil
 }
 
-func (x *KaspadMessage_PruningPointUtxoSetChunk) fromAppMessage(message *appmessage.MsgPruningPointUTXOSetChunk) error {
+func (x *KaspidMessage_PruningPointUtxoSetChunk) fromAppMessage(message *appmessage.MsgPruningPointUTXOSetChunk) error {
 	outpointAndUTXOEntryPairs := make([]*OutpointAndUtxoEntryPair, len(message.OutpointAndUTXOEntryPairs))
 	for i, outpointAndUTXOEntryPair := range message.OutpointAndUTXOEntryPairs {
 		transactionID := domainTransactionIDToProto(&outpointAndUTXOEntryPair.Outpoint.TxID)

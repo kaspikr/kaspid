@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/util/profiling"
+	"github.com/kaspikr/kaspid/stability-tests/common"
+	"github.com/kaspikr/kaspid/util/profiling"
 )
 
 const timeout = 5 * time.Second

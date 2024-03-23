@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
 )
 
-// MsgRequestPruningPointUTXOSet represents a kaspa RequestPruningPointUTXOSet message
+// MsgRequestPruningPointUTXOSet represents a kaspi RequestPruningPointUTXOSet message
 type MsgRequestPruningPointUTXOSet struct {
 	baseMessage
 	PruningPointHash *externalapi.DomainHash

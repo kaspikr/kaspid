@@ -2,11 +2,11 @@ package util_test
 
 import (
 	"fmt"
-	"github.com/kaspanet/kaspad/util/difficulty"
+	"github.com/kaspikr/kaspid/util/difficulty"
 	"math"
 	"math/big"
 
-	"github.com/kaspanet/kaspad/util"
+	"github.com/kaspikr/kaspid/util"
 )
 
 func ExampleAmount() {
@@ -57,7 +57,7 @@ func ExampleNewAmount() {
 	// Output: 1 KAS
 	// 0.01234567 KAS
 	// 0 KAS
-	// invalid kaspa amount
+	// invalid kaspi amount
 }
 
 func ExampleAmount_unitConversions() {

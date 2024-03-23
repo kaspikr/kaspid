@@ -4,25 +4,25 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspikr/kaspid/domain/consensus/model/externalapi"
 
-	"github.com/kaspanet/kaspad/domain/miningmanager/mempool"
+	"github.com/kaspikr/kaspid/domain/miningmanager/mempool"
 
-	"github.com/kaspanet/kaspad/app/protocol"
-	"github.com/kaspanet/kaspad/app/rpc"
-	"github.com/kaspanet/kaspad/domain"
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/utxoindex"
-	"github.com/kaspanet/kaspad/infrastructure/config"
-	infrastructuredatabase "github.com/kaspanet/kaspad/infrastructure/db/database"
-	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
-	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
-	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/kaspikr/kaspid/app/protocol"
+	"github.com/kaspikr/kaspid/app/rpc"
+	"github.com/kaspikr/kaspid/domain"
+	"github.com/kaspikr/kaspid/domain/consensus"
+	"github.com/kaspikr/kaspid/domain/utxoindex"
+	"github.com/kaspikr/kaspid/infrastructure/config"
+	infrastructuredatabase "github.com/kaspikr/kaspid/infrastructure/db/database"
+	"github.com/kaspikr/kaspid/infrastructure/network/addressmanager"
+	"github.com/kaspikr/kaspid/infrastructure/network/connmanager"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter/id"
+	"github.com/kaspikr/kaspid/util/panics"
 )
 
-// ComponentManager is a wrapper for all the kaspad services
+// ComponentManager is a wrapper for all the kaspid services
 type ComponentManager struct {
 	cfg               *config.Config
 	addressManager    *addressmanager.AddressManager
@@ -34,14 +34,14 @@ type ComponentManager struct {
 	started, shutdown int32
 }
 
-// Start launches all the kaspad services.
+// Start launches all the kaspid services.
 func (a *ComponentManager) Start() {
 	// Already started?
 	if atomic.AddInt32(&a.started, 1) != 1 {
 		return
 	}
 
-	log.Trace("Starting kaspad")
+	log.Trace("Starting kaspid")
 
 	err := a.netAdapter.Start()
 	if err != nil {
@@ -51,15 +51,15 @@ func (a *ComponentManager) Start() {
 	a.connectionManager.Start()
 }
 
-// Stop gracefully shuts down all the kaspad services.
+// Stop gracefully shuts down all the kaspid services.
 func (a *ComponentManager) Stop() {
 	// Make sure this only happens once.
 	if atomic.AddInt32(&a.shutdown, 1) != 1 {
-		log.Infof("Kaspad is already in the process of shutting down")
+		log.Infof("Kaspid is already in the process of shutting down")
 		return
 	}
 
-	log.Warnf("Kaspad shutting down")
+	log.Warnf("Kaspid shutting down")
 
 	a.connectionManager.Stop()
 
