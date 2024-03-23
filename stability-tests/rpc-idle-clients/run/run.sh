@@ -1,32 +1,32 @@
 #!/bin/bash
-rm -rf /tmp/kaspad-temp
+rm -rf /tmp/kaspid-temp
 
 NUM_CLIENTS=128
-kaspad --devnet --appdir=/tmp/kaspad-temp --profile=6061 --rpcmaxwebsockets=$NUM_CLIENTS &
-KASPAD_PID=$!
-KASPAD_KILLED=0
-function killKaspadIfNotKilled() {
-  if [ $KASPAD_KILLED -eq 0 ]; then
-    kill $KASPAD_PID
+kaspid --devnet --appdir=/tmp/kaspid-temp --profile=6061 --rpcmaxwebsockets=$NUM_CLIENTS &
+KASPID_PID=$!
+KASPID_KILLED=0
+function killKaspidIfNotKilled() {
+  if [ $KASPID_KILLED -eq 0 ]; then
+    kill $KASPID_PID
   fi
 }
-trap "killKaspadIfNotKilled" EXIT
+trap "killKaspidIfNotKilled" EXIT
 
 sleep 1
 
 rpc-idle-clients --devnet --profile=7000 -n=$NUM_CLIENTS
 TEST_EXIT_CODE=$?
 
-kill $KASPAD_PID
+kill $KASPID_PID
 
-wait $KASPAD_PID
-KASPAD_EXIT_CODE=$?
-KASPAD_KILLED=1
+wait $KASPID_PID
+KASPID_EXIT_CODE=$?
+KASPID_KILLED=1
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "Kaspad exit code: $KASPAD_EXIT_CODE"
+echo "Kaspid exit code: $KASPID_EXIT_CODE"
 
-if [ $TEST_EXIT_CODE -eq 0 ] && [ $KASPAD_EXIT_CODE -eq 0 ]; then
+if [ $TEST_EXIT_CODE -eq 0 ] && [ $KASPID_EXIT_CODE -eq 0 ]; then
   echo "rpc-idle-clients test: PASSED"
   exit 0
 fi

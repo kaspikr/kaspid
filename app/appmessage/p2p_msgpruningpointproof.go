@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgPruningPointProof represents a kaspa PruningPointProof message
+// MsgPruningPointProof represents a kaspi PruningPointProof message
 type MsgPruningPointProof struct {
 	baseMessage
 

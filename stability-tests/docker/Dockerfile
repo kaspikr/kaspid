@@ -1,14 +1,14 @@
-ARG KASPAD_IMAGE
+ARG KASPID_IMAGE
 ARG KASPAMINER_IMAGE
 
-FROM ${KASPAD_IMAGE} as kaspad
-FROM ${KASPAMINER_IMAGE} as kaspaminer
+FROM ${KASPID_IMAGE} as kaspid
+FROM ${KASPAMINER_IMAGE} as kaspiminer
 
 FROM golang:1.19-alpine
 
-RUN mkdir -p /go/src/github.com/kaspanet/kaspad
+RUN mkdir -p /go/src/github.com/kaspikr/kaspid
 
-WORKDIR /go/src/github.com/kaspanet/kaspad
+WORKDIR /go/src/github.com/kaspikr/kaspid
 
 RUN apk add bash build-base git
 
@@ -19,11 +19,11 @@ RUN go mod download
 
 COPY . .
 
-COPY --from=kaspad /app/ /app/
-COPY --from=kaspaminer /app/ /app/
+COPY --from=kaspid /app/ /app/
+COPY --from=kaspiminer /app/ /app/
 ENV PATH="/app:${PATH}"
 
-WORKDIR /go/src/github.com/kaspanet/kaspad/stability-tests
+WORKDIR /go/src/github.com/kaspikr/kaspid/stability-tests
 
 RUN go install ./...
 

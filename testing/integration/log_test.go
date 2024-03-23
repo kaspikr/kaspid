@@ -6,8 +6,8 @@
 package integration
 
 import (
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/kaspikr/kaspid/infrastructure/logger"
+	"github.com/kaspikr/kaspid/util/panics"
 )
 
 var log = logger.RegisterSubSystem("INTG")

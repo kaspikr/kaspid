@@ -3,18 +3,18 @@ package handshake
 import (
 	"sync/atomic"
 
-	"github.com/kaspanet/kaspad/domain"
+	"github.com/kaspikr/kaspid/domain"
 
-	"github.com/kaspanet/kaspad/app/protocol/common"
-	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
-	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspikr/kaspid/app/protocol/common"
+	"github.com/kaspikr/kaspid/app/protocol/protocolerrors"
+	"github.com/kaspikr/kaspid/infrastructure/network/addressmanager"
 
-	"github.com/kaspanet/kaspad/infrastructure/config"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
+	"github.com/kaspikr/kaspid/infrastructure/config"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
-	routerpkg "github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	peerpkg "github.com/kaspikr/kaspid/app/protocol/peer"
+	routerpkg "github.com/kaspikr/kaspid/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

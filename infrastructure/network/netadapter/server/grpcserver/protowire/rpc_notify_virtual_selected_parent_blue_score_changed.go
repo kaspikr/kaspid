@@ -1,30 +1,30 @@
 package protowire
 
 import (
-	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspikr/kaspid/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest is nil")
 	}
 	return &appmessage.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage{}, nil
 }
 
-func (x *KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) fromAppMessage(_ *appmessage.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage) error {
+func (x *KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) fromAppMessage(_ *appmessage.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage) error {
 	x.NotifyVirtualSelectedParentBlueScoreChangedRequest = &NotifyVirtualSelectedParentBlueScoreChangedRequestMessage{}
 	return nil
 }
 
-func (x *KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse is nil")
+		return nil, errors.Wrapf(errorNil, "KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse is nil")
 	}
 	return x.NotifyVirtualSelectedParentBlueScoreChangedResponse.toAppMessage()
 }
 
-func (x *KaspadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage) error {
+func (x *KaspidMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -49,14 +49,14 @@ func (x *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage) toAppMessag
 	}, nil
 }
 
-func (x *KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification is nil")
 	}
 	return x.VirtualSelectedParentBlueScoreChangedNotification.toAppMessage()
 }
 
-func (x *KaspadMessage_VirtualSelectedParentBlueScoreChangedNotification) fromAppMessage(message *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage) error {
+func (x *KaspidMessage_VirtualSelectedParentBlueScoreChangedNotification) fromAppMessage(message *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage) error {
 	x.VirtualSelectedParentBlueScoreChangedNotification = &VirtualSelectedParentBlueScoreChangedNotificationMessage{
 		VirtualSelectedParentBlueScore: message.VirtualSelectedParentBlueScore,
 	}

@@ -1,11 +1,11 @@
 package protowire
 
-import "github.com/kaspanet/kaspad/app/appmessage"
+import "github.com/kaspikr/kaspid/app/appmessage"
 
-func (x *KaspadMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
+func (x *KaspidMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.MsgUnexpectedPruningPoint{}, nil
 }
 
-func (x *KaspadMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
+func (x *KaspidMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
 	return nil
 }

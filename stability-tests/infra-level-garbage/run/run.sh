@@ -1,23 +1,23 @@
 #!/bin/bash
-rm -rf /tmp/kaspad-temp
+rm -rf /tmp/kaspid-temp
 
-kaspad --devnet --appdir=/tmp/kaspad-temp --profile=6061 &
-KASPAD_PID=$!
+kaspid --devnet --appdir=/tmp/kaspid-temp --profile=6061 &
+KASPID_PID=$!
 
 sleep 1
 
 infra-level-garbage --devnet -alocalhost:16611 -m messages.dat --profile=7000
 TEST_EXIT_CODE=$?
 
-kill $KASPAD_PID
+kill $KASPID_PID
 
-wait $KASPAD_PID
-KASPAD_EXIT_CODE=$?
+wait $KASPID_PID
+KASPID_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "Kaspad exit code: $KASPAD_EXIT_CODE"
+echo "Kaspid exit code: $KASPID_EXIT_CODE"
 
-if [ $TEST_EXIT_CODE -eq 0 ] && [ $KASPAD_EXIT_CODE -eq 0 ]; then
+if [ $TEST_EXIT_CODE -eq 0 ] && [ $KASPID_EXIT_CODE -eq 0 ]; then
   echo "infra-level-garbage test: PASSED"
   exit 0
 fi

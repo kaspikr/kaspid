@@ -1,9 +1,9 @@
 package rpchandlers
 
 import (
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/app/rpc/rpccontext"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/kaspikr/kaspid/app/appmessage"
+	"github.com/kaspikr/kaspid/app/rpc/rpccontext"
+	"github.com/kaspikr/kaspid/infrastructure/network/netadapter/router"
 )
 
 // HandleGetMempoolEntries handles the respectively named RPC command
