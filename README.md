@@ -9,11 +9,11 @@ PLEASE NOTE: Any pull requests or issues that will be opened in this repository 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspikr/kaspid)
 
-Kaspid was the reference full node Kaspa implementation written in Go (golang).
+Kaspid was the reference full node Kaspi implementation written in Go (golang).
 
 ## What is kaspi
 
-Kaspa is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
+Kaspi is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
 
 ## Requirements
 

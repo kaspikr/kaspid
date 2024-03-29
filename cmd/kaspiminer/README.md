@@ -1,6 +1,6 @@
 # kaspiminer
 
-Kaspaminer is a CPU-based miner for kaspid
+Kaspiminer is a CPU-based miner for kaspid
 
 ## Requirements
 

@@ -28,7 +28,7 @@ import (
 )
 
 type server struct {
-	pb.UnimplementedKaspawalletdServer
+	pb.UnimplementedKaspiwalletdServer
 
 	rpcClient           *rpcclient.RPCClient // RPC client for ongoing user requests
 	backgroundRPCClient *rpcclient.RPCClient // RPC client dedicated for address and UTXO background fetching

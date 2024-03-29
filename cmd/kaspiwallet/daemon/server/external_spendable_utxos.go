@@ -46,7 +46,7 @@ func (s *server) selectExternalSpendableUTXOs(externalUTXOs *appmessage.GetUTXOs
 		if !isExternalUTXOSpendable(entry, daaScore, maturity) {
 			continue
 		}
-		selectedExternalUtxos = append(selectedExternalUtxos, libkaspiwallet.AppMessageUTXOToKaspawalletdUTXO(entry))
+		selectedExternalUtxos = append(selectedExternalUtxos, libkaspiwallet.AppMessageUTXOToKaspiwalletdUTXO(entry))
 	}
 
 	return selectedExternalUtxos, nil
