@@ -10,8 +10,8 @@ import (
 	"github.com/kaspikr/kaspid/domain/consensus/utils/utxo"
 )
 
-// KaspawalletdUTXOsTolibkaspiwalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libkaspiwallet.UTXO
-func KaspawalletdUTXOsTolibkaspiwalletUTXOs(kaspiwalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+// KaspiwalletdUTXOsTolibkaspiwalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libkaspiwallet.UTXO
+func KaspiwalletdUTXOsTolibkaspiwalletUTXOs(kaspiwalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
 	UTXOs := make([]*UTXO, len(kaspiwalletdUtxoEntires))
 	for i, entry := range kaspiwalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
@@ -41,8 +41,8 @@ func KaspawalletdUTXOsTolibkaspiwalletUTXOs(kaspiwalletdUtxoEntires []*pb.UtxosB
 	return UTXOs, nil
 }
 
-// AppMessageUTXOToKaspawalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
-func AppMessageUTXOToKaspawalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
+// AppMessageUTXOToKaspiwalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
+func AppMessageUTXOToKaspiwalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
 	return &pb.UtxosByAddressesEntry{
 		Outpoint: &pb.Outpoint{
 			TransactionId: appUTXOsByAddressesEntry.Outpoint.TransactionID,

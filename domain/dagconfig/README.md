@@ -22,7 +22,7 @@ import (
 	"github.com/kaspikr/kaspid/domain/dagconfig"
 )
 
-var testnet = flag.Bool("testnet", false, "operate on the testnet Kaspa network")
+var testnet = flag.Bool("testnet", false, "operate on the testnet Kaspi network")
 
 // By default (without --testnet), use mainnet.
 var dagParams = &dagconfig.MainnetParams

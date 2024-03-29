@@ -25,19 +25,19 @@ var (
 	// the overhead of creating it multiple times.
 	bigOne = big.NewInt(1)
 
-	// mainPowMax is the highest proof of work value a Kaspa block can
+	// mainPowMax is the highest proof of work value a Kaspi block can
 	// have for the main network. It is the value 2^255 - 1.
 	mainPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// testnetPowMax is the highest proof of work value a Kaspa block
+	// testnetPowMax is the highest proof of work value a Kaspi block
 	// can have for the test network. It is the value 2^255 - 1.
 	testnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// simnetPowMax is the highest proof of work value a Kaspa block
+	// simnetPowMax is the highest proof of work value a Kaspi block
 	// can have for the simulation test network. It is the value 2^255 - 1.
 	simnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// devnetPowMax is the highest proof of work value a Kaspa block
+	// devnetPowMax is the highest proof of work value a Kaspi block
 	// can have for the development network. It is the value
 	// 2^255 - 1.
 	devnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
@@ -46,8 +46,8 @@ var (
 // KType defines the size of GHOSTDAG consensus algorithm K parameter.
 type KType uint8
 
-// Params defines a Kaspa network by its parameters. These parameters may be
-// used by Kaspa applications to differentiate networks as well as addresses
+// Params defines a Kaspi network by its parameters. These parameters may be
+// used by Kaspi applications to differentiate networks as well as addresses
 // and keys for one network from those intended for use on another network.
 type Params struct {
 	// K defines the K parameter for GHOSTDAG consensus algorithm.
@@ -58,7 +58,7 @@ type Params struct {
 	Name string
 
 	// Net defines the magic bytes used to identify the network.
-	Net appmessage.KaspaNet
+	Net appmessage.KaspiNet
 
 	// RPCPort defines the rpc server port
 	RPCPort string
@@ -206,34 +206,19 @@ func (p *Params) PruningDepth() uint64 {
 	return 2*p.FinalityDepth() + 4*p.MergeSetSizeLimit*uint64(p.K) + 2*uint64(p.K) + 2
 }
 
-// MainnetParams defines the network parameters for the main Kaspa network.
+// MainnetParams defines the network parameters for the main Kaspi network.
 var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kaspi-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "16110",
-	DefaultPort: "16111",
-	DNSSeeds: []string{
+	RPCPort:     "25110",
+	DefaultPort: "25111",
+	DNSSeeds:    []string{
 		// This DNS seeder is run by Wolfie
-		"mainnet-dnsseed.kas.pa",
+		//"mainnet-dnsseed.kaspi.kr",
 		// This DNS seeder is run by Denis Mashkevich
-		"mainnet-dnsseed-1.kaspikr.org",
+		//"mainnet-dnsseed-1.kaspikr.org",
 		// This DNS seeder is run by Denis Mashkevich
-		"mainnet-dnsseed-2.kaspikr.org",
-		// This DNS seeder is run by Constantine Bytensky
-		"dnsseed.cbytensky.org",
-		// This DNS seeder is run by Georges Künzli
-		"seeder1.kaspid.net",
-		// This DNS seeder is run by Georges Künzli
-		"seeder2.kaspid.net",
-		// This DNS seeder is run by Georges Künzli
-		"seeder3.kaspid.net",
-		// This DNS seeder is run by Georges Künzli
-		"seeder4.kaspid.net",
-		// This DNS seeder is run by Tim
-		"kaspidns.kaspicalc.net",
-		// This DNS seeder is run by supertypo
-		"n-mainnet.kaspi.ws",
 	},
 
 	// DAG parameters
@@ -264,7 +249,7 @@ var MainnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixKaspa,
+	Prefix: util.Bech32PrefixKaspi,
 
 	// Address encoding magics
 	PrivateKeyID: 0x80, // starts with 5 (uncompressed) or K (compressed)
@@ -292,17 +277,15 @@ var MainnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// TestnetParams defines the network parameters for the test Kaspa network.
+// TestnetParams defines the network parameters for the test Kaspi network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kaspi-testnet-10",
 	Net:         appmessage.Testnet,
-	RPCPort:     "16210",
-	DefaultPort: "16211",
-	DNSSeeds: []string{
-		"testnet-10-dnsseed.kas.pa",
-		// This DNS seeder is run by Tiram
-		"seeder1-testnet.kaspid.net",
+	RPCPort:     "25210",
+	DefaultPort: "25211",
+	DNSSeeds:    []string{
+		//"testnet-10-dnsseed.kaspi.kr",
 	},
 
 	// DAG parameters
@@ -333,7 +316,7 @@ var TestnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixKaspaTest,
+	Prefix: util.Bech32PrefixKaspiTest,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -358,7 +341,7 @@ var TestnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// SimnetParams defines the network parameters for the simulation test Kaspa
+// SimnetParams defines the network parameters for the simulation test Kaspi
 // network. This network is similar to the normal test network except it is
 // intended for private use within a group of individuals doing simulation
 // testing. The functionality is intended to differ in that the only nodes
@@ -369,8 +352,8 @@ var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kaspi-simnet",
 	Net:         appmessage.Simnet,
-	RPCPort:     "16510",
-	DefaultPort: "16511",
+	RPCPort:     "25510",
+	DefaultPort: "25511",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters
@@ -402,7 +385,7 @@ var SimnetParams = Params{
 
 	PrivateKeyID: 0x64, // starts with 4 (uncompressed) or F (compressed)
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixKaspaSim,
+	Prefix: util.Bech32PrefixKaspiSim,
 
 	// EnableNonNativeSubnetworks enables non-native/coinbase transactions
 	EnableNonNativeSubnetworks: false,
@@ -424,13 +407,13 @@ var SimnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// DevnetParams defines the network parameters for the development Kaspa network.
+// DevnetParams defines the network parameters for the development Kaspi network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kaspi-devnet",
 	Net:         appmessage.Devnet,
-	RPCPort:     "16610",
-	DefaultPort: "16611",
+	RPCPort:     "25610",
+	DefaultPort: "25611",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters
@@ -461,7 +444,7 @@ var DevnetParams = Params{
 	AcceptUnroutable: true,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixKaspaDev,
+	Prefix: util.Bech32PrefixKaspiDev,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -486,14 +469,14 @@ var DevnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// ErrDuplicateNet describes an error where the parameters for a Kaspa
+// ErrDuplicateNet describes an error where the parameters for a Kaspi
 // network could not be set due to the network already being a standard
 // network or previously-registered into this package.
-var ErrDuplicateNet = errors.New("duplicate Kaspa network")
+var ErrDuplicateNet = errors.New("duplicate Kaspi network")
 
-var registeredNets = make(map[appmessage.KaspaNet]struct{})
+var registeredNets = make(map[appmessage.KaspiNet]struct{})
 
-// Register registers the network parameters for a Kaspa network. This may
+// Register registers the network parameters for a Kaspi network. This may
 // error with ErrDuplicateNet if the network is already registered (either
 // due to a previous Register call, or the network being one of the default
 // networks).

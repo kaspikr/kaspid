@@ -48,8 +48,8 @@ func parse(conf *parseConfig) error {
 			partiallySignedInput := partiallySignedTransaction.PartiallySignedInputs[index]
 
 			if conf.Verbose {
-				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f Kaspa\n", index, input.PreviousOutpoint.TransactionID,
-					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SompiPerKaspa))
+				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f Kaspi\n", index, input.PreviousOutpoint.TransactionID,
+					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SompiPerKaspi))
 			}
 
 			allInputSompi += partiallySignedInput.PrevOutput.Value
@@ -71,8 +71,8 @@ func parse(conf *parseConfig) error {
 				addressString = fmt.Sprintf("<Non-standard transaction script public key: %s>", scriptPublicKeyHex)
 			}
 
-			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f Kaspa\n",
-				index, addressString, float64(output.Value)/float64(constants.SompiPerKaspa))
+			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f Kaspi\n",
+				index, addressString, float64(output.Value)/float64(constants.SompiPerKaspi))
 
 			allOutputSompi += output.Value
 		}

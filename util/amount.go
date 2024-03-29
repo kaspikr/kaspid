@@ -87,7 +87,7 @@ func NewAmount(f float64) (Amount, error) {
 		return 0, errors.New("invalid kaspi amount")
 	}
 
-	return round(f * constants.SompiPerKaspa), nil
+	return round(f * constants.SompiPerKaspi), nil
 }
 
 // ToUnit converts a monetary amount counted in kaspi base units to a
