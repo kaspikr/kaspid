@@ -22,7 +22,7 @@ func ExamplePayToAddrScript() {
 	// which is useful to ensure the accuracy of the address and determine
 	// the address type. It is also required for the upcoming call to
 	// PayToAddrScript.
-	addressStr := "kaspi:qqj9fg59mptxkr9j0y53j5mwurcmda5mtza9n6v9pm9uj8h0wgk6uma5pvumr"
+	addressStr := "kaspi:qzy6cf82zzah2xh5jwtz8nx9u4gdj6zzke8gljs0v055ksmnl424u50xfc8mh"
 	address, err := util.DecodeAddress(addressStr, util.Bech32PrefixKaspi)
 	if err != nil {
 		fmt.Println(err)
@@ -45,15 +45,15 @@ func ExamplePayToAddrScript() {
 	fmt.Println("Script Disassembly:", disasm)
 
 	// Output:
-	// Script Hex: 202454a285d8566b0cb2792919536ee0f1b6f69b58ba59e9850ecbc91eef722daeac
-	// Script Disassembly: 2454a285d8566b0cb2792919536ee0f1b6f69b58ba59e9850ecbc91eef722dae OP_CHECKSIG
+	// Script Hex: 2089ac24ea10bb751af4939623ccc5e550d96842b64e8fca0f63e94b4373fd555eac
+	// Script Disassembly: 89ac24ea10bb751af4939623ccc5e550d96842b64e8fca0f63e94b4373fd555e OP_CHECKSIG
 }
 
 // This example demonstrates extracting information from a standard public key
 // script.
 func ExampleExtractScriptPubKeyAddress() {
 	// Start with a standard pay-to-pubkey script.
-	scriptHex := "2089ac24ea10bb751af4939623ccc5e550d96842b64e8fca0f63e94b4373fd555eac"
+	scriptHex := "200b331220d9d652a4470ce774d7af86516247fa9e198ae2a7b97163047404ee00ac"
 	script, err := hex.DecodeString(scriptHex)
 	if err != nil {
 		fmt.Println(err)
@@ -75,5 +75,5 @@ func ExampleExtractScriptPubKeyAddress() {
 
 	// Output:
 	// Script Class: pubkey
-	// Address: kaspi:qzy6cf82zzah2xh5jwtz8nx9u4gdj6zzke8gljs0v055ksmnl424u6fv7ajrs
+	// Address: kaspi:qq9nxy3qm8t99fz8pnnhf4a0segky3l6ncvc4c48h9ckxpr5qnhqq439jethw
 }
