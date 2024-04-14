@@ -6,7 +6,7 @@ KASPID_PID=$!
 
 sleep 1
 
-infra-level-garbage --devnet -alocalhost:16611 -m messages.dat --profile=7000
+infra-level-garbage --devnet -alocalhost:25611 -m messages.dat --profile=7000
 TEST_EXIT_CODE=$?
 
 kill $KASPID_PID
