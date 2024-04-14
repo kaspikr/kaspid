@@ -16,6 +16,7 @@ const (
 	SompiPerKaspi = 100_000_000
 
 	// MaxSompi is the maximum transaction amount allowed in sompi.
+	// 10초당 1블럭. 500개 보상일경우 117년. 반감기 없을때.
 	MaxSompi = uint64(180_000_000_000 * SompiPerKaspi)
 
 	// MaxTxInSequenceNum is the maximum sequence number the sequence field
