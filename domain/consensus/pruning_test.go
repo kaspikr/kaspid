@@ -10,9 +10,9 @@ import (
 
 func TestPruningDepth(t *testing.T) {
 	expectedResult := map[string]uint64{
-		dagconfig.MainnetParams.Name: 185798,
-		dagconfig.TestnetParams.Name: 185798,
-		dagconfig.DevnetParams.Name:  185798,
+		dagconfig.MainnetParams.Name: 30278,
+		dagconfig.TestnetParams.Name: 30278,
+		dagconfig.DevnetParams.Name:  30278,
 		dagconfig.SimnetParams.Name:  132998,
 	}
 	testutils.ForAllNets(t, true, func(t *testing.T, consensusConfig *consensus.Config) {
