@@ -12,7 +12,7 @@ func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {
 	const secondsPerMonth = 2629800
 	const secondsPerHalving = secondsPerMonth * 12
 	const deflationaryPhaseDaaScore = secondsPerMonth * 6
-	const deflationaryPhaseBaseSubsidy = 440 * constants.SompiPerKaspi
+	const deflationaryPhaseBaseSubsidy = 500 * constants.SompiPerKaspi
 	coinbaseManagerInterface := New(
 		nil,
 		0,
@@ -43,32 +43,32 @@ func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {
 		{
 			name:                 "after one halving",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving,
-			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy / 2,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 		{
 			name:                 "after two halvings",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving*2,
-			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy / 4,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 		{
 			name:                 "after five halvings",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving*5,
-			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy / 32,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 		{
 			name:                 "after 32 halvings",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving*32,
-			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy / 4294967296,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 		{
 			name:                 "just before subsidy depleted",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving*35,
-			expectedBlockSubsidy: 1,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 		{
 			name:                 "after subsidy depleted",
 			blockDaaScore:        deflationaryPhaseDaaScore + secondsPerHalving*36,
-			expectedBlockSubsidy: 0,
+			expectedBlockSubsidy: deflationaryPhaseBaseSubsidy,
 		},
 	}
 
