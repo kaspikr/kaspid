@@ -25,7 +25,7 @@ func TestPastMedianTime(t *testing.T) {
 		blockHashes[0] = consensusConfig.GenesisHash
 		blockTime := consensusConfig.GenesisBlock.Header.TimeInMilliseconds()
 		for i := uint32(1); i < numBlocks; i++ {
-			blockTime += 1000
+			blockTime += 10000
 			block, _, err := tc.BuildBlockWithParents([]*externalapi.DomainHash{blockHashes[i-1]}, nil, nil)
 			if err != nil {
 				t.Fatalf("BuildBlockWithParents: %s", err)
@@ -48,19 +48,19 @@ func TestPastMedianTime(t *testing.T) {
 		}{
 			{
 				blockNumber:                      263,
-				expectedMillisecondsSinceGenesis: 132000,
+				expectedMillisecondsSinceGenesis: 1320000,
 			},
 			{
 				blockNumber:                      271,
-				expectedMillisecondsSinceGenesis: 139000,
+				expectedMillisecondsSinceGenesis: 1390000,
 			},
 			{
 				blockNumber:                      241,
-				expectedMillisecondsSinceGenesis: 121000,
+				expectedMillisecondsSinceGenesis: 1210000,
 			},
 			{
 				blockNumber:                      5,
-				expectedMillisecondsSinceGenesis: 3000,
+				expectedMillisecondsSinceGenesis: 30000,
 			},
 		}
 
