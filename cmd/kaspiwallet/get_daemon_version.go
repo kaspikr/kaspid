@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/kaspikr/kaspid/cmd/kaspawallet/daemon/client"
-	"github.com/kaspikr/kaspid/cmd/kaspawallet/daemon/pb"
+	"github.com/kaspikr/kaspid/cmd/kaspiwallet/daemon/client"
+	"github.com/kaspikr/kaspid/cmd/kaspiwallet/daemon/pb"
 )
 
 func getDaemonVersion(conf *getDaemonVersionConfig) error {

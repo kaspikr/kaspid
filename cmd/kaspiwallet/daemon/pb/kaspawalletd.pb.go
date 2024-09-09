@@ -1251,7 +1251,7 @@ type GetVersionRequest struct {
 func (x *GetVersionRequest) Reset() {
 	*x = GetVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_kaspawalletd_proto_msgTypes[23]
+		mi := &file_kaspiwalletd_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1264,7 +1264,7 @@ func (x *GetVersionRequest) String() string {
 func (*GetVersionRequest) ProtoMessage() {}
 
 func (x *GetVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_kaspawalletd_proto_msgTypes[23]
+	mi := &file_kaspiwalletd_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1277,7 +1277,7 @@ func (x *GetVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVersionRequest.ProtoReflect.Descriptor instead.
 func (*GetVersionRequest) Descriptor() ([]byte, []int) {
-	return file_kaspawalletd_proto_rawDescGZIP(), []int{23}
+	return file_kaspiwalletd_proto_rawDescGZIP(), []int{23}
 }
 
 type GetVersionResponse struct {
@@ -1291,7 +1291,7 @@ type GetVersionResponse struct {
 func (x *GetVersionResponse) Reset() {
 	*x = GetVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_kaspawalletd_proto_msgTypes[24]
+		mi := &file_kaspiwalletd_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1304,7 +1304,7 @@ func (x *GetVersionResponse) String() string {
 func (*GetVersionResponse) ProtoMessage() {}
 
 func (x *GetVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_kaspawalletd_proto_msgTypes[24]
+	mi := &file_kaspiwalletd_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1317,7 +1317,7 @@ func (x *GetVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVersionResponse.ProtoReflect.Descriptor instead.
 func (*GetVersionResponse) Descriptor() ([]byte, []int) {
-	return file_kaspawalletd_proto_rawDescGZIP(), []int{24}
+	return file_kaspiwalletd_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetVersionResponse) GetVersion() string {
@@ -1561,8 +1561,8 @@ var file_kaspiwalletd_proto_goTypes = []interface{}{
 	(*SendResponse)(nil),                       // 20: kaspiwalletd.SendResponse
 	(*SignRequest)(nil),                        // 21: kaspiwalletd.SignRequest
 	(*SignResponse)(nil),                       // 22: kaspiwalletd.SignResponse
-	(*GetVersionRequest)(nil),                  // 23: kaspawalletd.GetVersionRequest
-	(*GetVersionResponse)(nil),                 // 24: kaspawalletd.GetVersionResponse
+	(*GetVersionRequest)(nil),                  // 23: kaspiwalletd.GetVersionRequest
+	(*GetVersionResponse)(nil),                 // 24: kaspiwalletd.GetVersionResponse
 }
 var file_kaspiwalletd_proto_depIdxs = []int32{
 	2,  // 0: kaspiwalletd.GetBalanceResponse.addressBalances:type_name -> kaspiwalletd.AddressBalances
@@ -1579,7 +1579,7 @@ var file_kaspiwalletd_proto_depIdxs = []int32{
 	9,  // 11: kaspiwalletd.kaspiwalletd.Broadcast:input_type -> kaspiwalletd.BroadcastRequest
 	19, // 12: kaspiwalletd.kaspiwalletd.Send:input_type -> kaspiwalletd.SendRequest
 	21, // 13: kaspiwalletd.kaspiwalletd.Sign:input_type -> kaspiwalletd.SignRequest
-	23, // 14: kaspawalletd.kaspawalletd.GetVersion:input_type -> kaspawalletd.GetVersionRequest
+	23, // 14: kaspiwalletd.kaspiwalletd.GetVersion:input_type -> kaspiwalletd.GetVersionRequest
 	1,  // 15: kaspiwalletd.kaspiwalletd.GetBalance:output_type -> kaspiwalletd.GetBalanceResponse
 	18, // 16: kaspiwalletd.kaspiwalletd.GetExternalSpendableUTXOs:output_type -> kaspiwalletd.GetExternalSpendableUTXOsResponse
 	4,  // 17: kaspiwalletd.kaspiwalletd.CreateUnsignedTransactions:output_type -> kaspiwalletd.CreateUnsignedTransactionsResponse
@@ -1589,7 +1589,7 @@ var file_kaspiwalletd_proto_depIdxs = []int32{
 	10, // 21: kaspiwalletd.kaspiwalletd.Broadcast:output_type -> kaspiwalletd.BroadcastResponse
 	20, // 22: kaspiwalletd.kaspiwalletd.Send:output_type -> kaspiwalletd.SendResponse
 	22, // 23: kaspiwalletd.kaspiwalletd.Sign:output_type -> kaspiwalletd.SignResponse
-	24, // 24: kaspawalletd.kaspawalletd.GetVersion:output_type -> kaspawalletd.GetVersionResponse
+	24, // 24: kaspiwalletd.kaspiwalletd.GetVersion:output_type -> kaspiwalletd.GetVersionResponse
 	15, // [15:25] is the sub-list for method output_type
 	5,  // [5:15] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -1879,7 +1879,7 @@ func file_kaspiwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_kaspawalletd_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_kaspiwalletd_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVersionRequest); i {
 			case 0:
 				return &v.state
@@ -1891,7 +1891,7 @@ func file_kaspiwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_kaspawalletd_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_kaspiwalletd_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVersionResponse); i {
 			case 0:
 				return &v.state

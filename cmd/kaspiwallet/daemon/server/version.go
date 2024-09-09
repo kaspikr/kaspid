@@ -2,7 +2,7 @@ package server
 
 import (
 	"context"
-	"github.com/kaspikr/kaspid/cmd/kaspawallet/daemon/pb"
+	"github.com/kaspikr/kaspid/cmd/kaspiwallet/daemon/pb"
 	"github.com/kaspikr/kaspid/version"
 )
 

@@ -12,12 +12,12 @@ Kaspid v0.12.15 - 2023-12-16
 ===========================
 
 * Update ECDSA address test to use a valid public key (#2202)
-* Fix off by small amounts in sent amount kaspa (#2220)
+* Fix off by small amounts in sent amount kaspi (#2220)
 * Use removeRedeemers correctly by (#2235)
 * Fix windows asset building by increasing go version (#2245)
 * Added a mainnet dnsseeder (#2247)
 * Fix extract atomic swap data pushes (#2203)
-* Adapt kaspawallet to support testnet 11 (#2211)
+* Adapt kaspiwallet to support testnet 11 (#2211)
 * Fix type detection in RemoveInvalidTransactions (#2252)
 
 Kaspid v0.12.14 - 2023-09-26

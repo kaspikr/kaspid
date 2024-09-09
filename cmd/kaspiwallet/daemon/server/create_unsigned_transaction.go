@@ -17,7 +17,7 @@ const feePerInput = 10000
 // The minimal change amount to target in order to avoid large storage mass (see KIP9 for more details).
 // By having at least 0.2KAS in the change output we make sure that every transaction with send value >= 0.2KAS
 // should succeed (at most 50K storage mass for each output, thus overall lower than standard mass upper bound which is 100K gram)
-const minChangeTarget = constants.SompiPerKaspa / 5
+const minChangeTarget = constants.SompiPerKaspi / 5
 
 func (s *server) CreateUnsignedTransactions(_ context.Context, request *pb.CreateUnsignedTransactionsRequest) (
 	*pb.CreateUnsignedTransactionsResponse, error,

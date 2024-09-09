@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.3
-// source: kaspawalletd.proto
+// source: kaspiwalletd.proto
 
 package pb
 
@@ -125,9 +125,9 @@ func (c *kaspiwalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...
 	return out, nil
 }
 
-func (c *kaspawalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
+func (c *kaspiwalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
 	out := new(GetVersionResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/GetVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/kaspiwalletd.kaspiwalletd/GetVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -184,7 +184,7 @@ func (UnimplementedKaspiwalletdServer) Send(context.Context, *SendRequest) (*Sen
 func (UnimplementedKaspiwalletdServer) Sign(context.Context, *SignRequest) (*SignResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Sign not implemented")
 }
-func (UnimplementedKaspawalletdServer) GetVersion(context.Context, *GetVersionRequest) (*GetVersionResponse, error) {
+func (UnimplementedKaspiwalletdServer) GetVersion(context.Context, *GetVersionRequest) (*GetVersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVersion not implemented")
 }
 func (UnimplementedKaspiwalletdServer) mustEmbedUnimplementedKaspiwalletdServer() {}
@@ -362,20 +362,20 @@ func _Kaspiwalletd_Sign_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Kaspawalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Kaspiwalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetVersionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(KaspawalletdServer).GetVersion(ctx, in)
+		return srv.(KaspiwalletdServer).GetVersion(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/GetVersion",
+		FullMethod: "/kaspiwalletd.kaspiwalletd/GetVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(KaspawalletdServer).GetVersion(ctx, req.(*GetVersionRequest))
+		return srv.(KaspiwalletdServer).GetVersion(ctx, req.(*GetVersionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -425,7 +425,7 @@ var Kaspiwalletd_ServiceDesc = grpc.ServiceDesc{
 		},
 		{
 			MethodName: "GetVersion",
-			Handler:    _Kaspawalletd_GetVersion_Handler,
+			Handler:    _Kaspiwalletd_GetVersion_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
