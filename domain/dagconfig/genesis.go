@@ -57,8 +57,8 @@ var genesisBlock = externalapi.DomainBlock{
 		&externalapi.DomainHash{},
 		externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{}),
 		1713102639000,
-		486722099,
-		0x3392c,
+		525264379,
+		0x48e5e,
 		0, // Checkpoint DAA score
 		0,
 		big.NewInt(0),
